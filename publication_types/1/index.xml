@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>1 on Vishal Keshav</title>
+    <link>/publication_types/1/</link>
+    <description>Recent content in 1 on Vishal Keshav</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Sat, 01 Sep 2018 00:00:00 +0530</lastBuildDate>
+    
+	<atom:link href="/publication_types/1/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Decoupling Semantic Context and Color Correlation</title>
+      <link>/publication/illumination-estimation/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0530</pubDate>
+      
+      <guid>/publication/illumination-estimation/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

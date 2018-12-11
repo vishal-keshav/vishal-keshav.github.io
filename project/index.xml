@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Vishal Keshav</title>
+    <link>/project/</link>
+    <description>Recent content in Projects on Vishal Keshav</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Thu, 27 Sep 2018 00:00:00 +0530</lastBuildDate>
+    
+	<atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Xcelerator: Neural Architecture Search</title>
+      <link>/project/xcelerator/</link>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 +0530</pubDate>
+      
+      <guid>/project/xcelerator/</guid>
+      <description>Machine learning has become ubiquitous and is now realized in almost every application. This has burdened the machine learning model developers to make necessary modification in the algorithm to select best available architecture such that performance and power needs can be satisfied after deploying the application to smart devices such as smartphones and wearables.
+For most of the part, a developer tunes the model by changing several hyper-parameters. However, any choice of such hyper-parameters comes either by experience and deep insight, or certain guidelines as provided by the architecture.</description>
+    </item>
+    
+    <item>
+      <title>Interpreter</title>
+      <link>/project/interpreter/</link>
+      <pubDate>Fri, 27 Apr 2018 00:00:00 +0530</pubDate>
+      
+      <guid>/project/interpreter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Matrix-matrix multiplication</title>
+      <link>/project/parallel-matrix-multiplication/</link>
+      <pubDate>Fri, 27 Apr 2018 00:00:00 +0530</pubDate>
+      
+      <guid>/project/parallel-matrix-multiplication/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Py-Game</title>
+      <link>/project/py-game/</link>
+      <pubDate>Fri, 27 Apr 2018 00:00:00 +0530</pubDate>
+      
+      <guid>/project/py-game/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tiny-ml-framework</title>
+      <link>/project/tiny-ml-framework/</link>
+      <pubDate>Fri, 27 Apr 2018 00:00:00 +0530</pubDate>
+      
+      <guid>/project/tiny-ml-framework/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UVa</title>
+      <link>/project/uva/</link>
+      <pubDate>Fri, 27 Apr 2018 00:00:00 +0530</pubDate>
+      
+      <guid>/project/uva/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

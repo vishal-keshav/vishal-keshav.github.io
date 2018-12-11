@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CodeOn on Vishal Keshav</title>
+    <link>/tags/codeon/</link>
+    <description>Recent content in CodeOn on Vishal Keshav</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Fri, 27 Apr 2018 00:00:00 +0530</lastBuildDate>
+    
+	<atom:link href="/tags/codeon/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Interpreter</title>
+      <link>/project/interpreter/</link>
+      <pubDate>Fri, 27 Apr 2018 00:00:00 +0530</pubDate>
+      
+      <guid>/project/interpreter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Matrix-matrix multiplication</title>
+      <link>/project/parallel-matrix-multiplication/</link>
+      <pubDate>Fri, 27 Apr 2018 00:00:00 +0530</pubDate>
+      
+      <guid>/project/parallel-matrix-multiplication/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UVa</title>
+      <link>/project/uva/</link>
+      <pubDate>Fri, 27 Apr 2018 00:00:00 +0530</pubDate>
+      
+      <guid>/project/uva/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
