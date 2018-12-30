@@ -11,61 +11,9 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Xcelerator: Neural Architecture Search</title>
-      <link>/project/xcelerator/</link>
-      <pubDate>Thu, 27 Sep 2018 00:00:00 +0530</pubDate>
-      
-      <guid>/project/xcelerator/</guid>
-      <description>&lt;p&gt;Machine learning has become ubiquitous and is now realized in almost every application. This has burdened the machine learning model developers to make necessary modification in the algorithm to select best available architecture such that performance and power needs can be satisfied after deploying the application to smart devices such as smartphones and wearables.&lt;/p&gt;
-
-&lt;p&gt;For most of the part, a developer tunes the model by changing several hyper-parameters. However, any choice of such hyper-parameters comes either by experience and deep insight, or certain guidelines as provided by the architecture.&lt;/p&gt;
-
-&lt;p&gt;We propose to develop a meta-learning algorithm that takes a specified model architecture and tunes it to match the performance requirement on a particular smart-device. More specifically, we propose to build a policy that iteratively removes weights, channels, and layers in a vision-based model to improve upon execution efficiency while maintaining the prediction accuracy. We show that once the policy is constructed on a particular platform, the domain knowledge can be transferred to construct a policy for a different platform&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Example Page</title>
-      <link>/tutorial/example/</link>
-      <pubDate>Sun, 09 Sep 2018 00:00:00 +0530</pubDate>
-      
-      <guid>/tutorial/example/</guid>
-      <description>
-
-&lt;p&gt;In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
-
-&lt;h2 id=&#34;tip-1&#34;&gt;Tip 1&lt;/h2&gt;
-
-&lt;p&gt;&amp;hellip;&lt;/p&gt;
-
-&lt;h2 id=&#34;tip-2&#34;&gt;Tip 2&lt;/h2&gt;
-
-&lt;p&gt;&amp;hellip;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Decoupling Semantic Context and Color Correlation</title>
-      <link>/publication/illumination-estimation/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0530</pubDate>
-      
-      <guid>/publication/illumination-estimation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Optimisation of power consumption in wireless network</title>
-      <link>/publication/optimizating-wireless-serving/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0530</pubDate>
-      
-      <guid>/publication/optimizating-wireless-serving/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Interpreter</title>
       <link>/project/interpreter/</link>
-      <pubDate>Fri, 27 Apr 2018 00:00:00 +0530</pubDate>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 +0530</pubDate>
       
       <guid>/project/interpreter/</guid>
       <description></description>
@@ -74,7 +22,7 @@
     <item>
       <title>Matrix-matrix multiplication</title>
       <link>/project/parallel-matrix-multiplication/</link>
-      <pubDate>Fri, 27 Apr 2018 00:00:00 +0530</pubDate>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 +0530</pubDate>
       
       <guid>/project/parallel-matrix-multiplication/</guid>
       <description></description>
@@ -83,7 +31,7 @@
     <item>
       <title>Py-Game</title>
       <link>/project/py-game/</link>
-      <pubDate>Fri, 27 Apr 2018 00:00:00 +0530</pubDate>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 +0530</pubDate>
       
       <guid>/project/py-game/</guid>
       <description></description>
@@ -92,7 +40,7 @@
     <item>
       <title>Tiny-ml-framework</title>
       <link>/project/tiny-ml-framework/</link>
-      <pubDate>Fri, 27 Apr 2018 00:00:00 +0530</pubDate>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 +0530</pubDate>
       
       <guid>/project/tiny-ml-framework/</guid>
       <description></description>
@@ -101,7 +49,7 @@
     <item>
       <title>UVa</title>
       <link>/project/uva/</link>
-      <pubDate>Fri, 27 Apr 2018 00:00:00 +0530</pubDate>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 +0530</pubDate>
       
       <guid>/project/uva/</guid>
       <description></description>
@@ -110,21 +58,17 @@
     <item>
       <title>Review of Computer Vision Architecture</title>
       <link>/post/review-dnn/</link>
-      <pubDate>Fri, 20 Apr 2018 00:00:00 +0530</pubDate>
+      <pubDate>Thu, 20 Sep 2018 00:00:00 +0530</pubDate>
       
       <guid>/post/review-dnn/</guid>
       <description>
 
-&lt;h1 id=&#34;ml101&#34;&gt;ML101&lt;/h1&gt;
-
 &lt;p&gt;&lt;img src=&#34;res/cover.jpg&#34; alt=&#34;Cover&#34; /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-A&#34;&gt;These paper appeared in several renowned conferences around the world with
-an impact of making inference faster in deep learning terminology.
-Ideas from these paper have been extracted and presented in a simplified manner.
-&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;papers-from-2018&#34;&gt;Papers from 2018&lt;/h2&gt;
 
-&lt;h2 id=&#34;papers-yet-to-be-published&#34;&gt;Papers yet to be published&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;Updating soon...
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;hr /&gt;
 
@@ -138,11 +82,11 @@ activation.
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Hints that the computation will lead to zero activation
-is given by a parallel light-weight convolution&amp;rsquo;s (either spatial or depth wise) activation.&lt;/li&gt;
-&lt;li&gt;LCCL (low cost collaborative layer) are parallel low cost convolutions providing hints to main convolution that output gonna be zero&lt;/li&gt;
+&lt;li&gt;Hints about zero features that may lead to zero activation
+is given by a parallel light-weight convolution (either spatial or depth wise) activation.&lt;/li&gt;
+&lt;li&gt;LCCL (low cost collaborative layer) are parallel low cost convolutions providing zero outcome hints to main convolution.&lt;/li&gt;
 &lt;li&gt;To increase the sparsity, methods such as using RelU activation and Batch Normalization is explored.&lt;/li&gt;
-&lt;li&gt;Some lights on GEMM and GEMV has been also put to argue about theoretical and practical acceleration improvements.&lt;/li&gt;
+&lt;li&gt;Mentions of GEMM and GEMV for theoretical and practical acceleration improvements.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&#34;res/more_is_less.jpg&#34; alt=&#34;more_is_less&#34; /&gt;
@@ -152,16 +96,16 @@ is given by a parallel light-weight convolution&amp;rsquo;s (either spatial or d
 
 &lt;h3 id=&#34;learning-efficient-convolutional-networks-through-network-slimming&#34;&gt;Learning Efficient Convolutional Networks through Network Slimming&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code&gt;Problem solved: Reduction of input input channels that have near
-zero activation by enforcing L1 norm to be zero along with regularization
+&lt;pre&gt;&lt;code&gt;Problem solved: Reducing the input channels that have near
+zero activation, by enforcing L1 norm to be zero along with regularization
 effect. Lesser the input channels, faster the inference.
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Input channel are pruned during training by enforcing L1 norm to become zero.&lt;/li&gt;
+&lt;li&gt;Input channel are pruned during the training by enforcing L1 norm to become zero.&lt;/li&gt;
 &lt;li&gt;L1 regularization on scaling factor of batch normalization layers per channel does not require any architectural changes.&lt;/li&gt;
 &lt;li&gt;Zero L1 enforcement per channel is achieved by addition of L1 norm of batch in the total cost function which then is needed to be minimized.&lt;/li&gt;
-&lt;li&gt;A little bit in drop of accuracy can be restored by retraining while multi-pass scheme can be applied to push more channel pruning&lt;/li&gt;
+&lt;li&gt;Drop in the prediction accuracy can be restored by retraining with multi-pass scheme.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&#34;res/network_slimming.jpg&#34; alt=&#34;network_slimming&#34; /&gt;
@@ -178,8 +122,8 @@ of convolution at current layer and next layer decreases.
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Filters in a given layer of a trained model are compared against each other based on L1 norm, and removed with lease (proportionally)&lt;/li&gt;
-&lt;li&gt;Removal of filters is done in a single shot for whole network, after which training can be done to restore accuracy&lt;/li&gt;
+&lt;li&gt;Filters in a given layer of a trained model are compared against each other based on L1 norm, and removed proportionally.&lt;/li&gt;
+&lt;li&gt;Removal of filters is done in a single shot for whole network, after which training can be done to restore the accuracy&lt;/li&gt;
 &lt;li&gt;Pruning filters across multiple layer can be done in either independent or greedy way.&lt;/li&gt;
 &lt;li&gt;Sensitivity of pruning filters in a given layer is measured by the rate at which accuracy decreases with respect to number of pruned filter. Highly sensitive layers are left out for pruning.&lt;/li&gt;
 &lt;/ul&gt;
@@ -843,6 +787,58 @@ This can effectively produce invariance to rotation and scaling
 
 &lt;p&gt;&lt;img src=&#34;res/tiled_conv.jpg&#34; alt=&#34;tiled_conv&#34; /&gt;
 &amp;gt;&lt;a href=&#34;https://www-cs.stanford.edu/~jngiam/papers/LeNgiamChenChiaKohNg2010.pdf&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Example Page</title>
+      <link>/tutorial/example/</link>
+      <pubDate>Sun, 09 Sep 2018 00:00:00 +0530</pubDate>
+      
+      <guid>/tutorial/example/</guid>
+      <description>
+
+&lt;p&gt;In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
+
+&lt;h2 id=&#34;tip-1&#34;&gt;Tip 1&lt;/h2&gt;
+
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+
+&lt;h2 id=&#34;tip-2&#34;&gt;Tip 2&lt;/h2&gt;
+
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Decoupling Semantic Context and Color Correlation</title>
+      <link>/publication/illumination-estimation/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0530</pubDate>
+      
+      <guid>/publication/illumination-estimation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Optimisation of power consumption in wireless network</title>
+      <link>/publication/optimizating-wireless-serving/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0530</pubDate>
+      
+      <guid>/publication/optimizating-wireless-serving/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Xcelerator: Neural Architecture Search</title>
+      <link>/project/xcelerator/</link>
+      <pubDate>Sun, 19 Aug 2018 00:00:00 +0530</pubDate>
+      
+      <guid>/project/xcelerator/</guid>
+      <description>&lt;p&gt;Machine learning has become ubiquitous and is now realized in almost every application. This has burdened the machine learning model developers to make necessary modification in the algorithm to select best available architecture such that performance and power needs can be satisfied post-deployment of the application to smart devices such as smartphones and wearables.&lt;/p&gt;
+
+&lt;p&gt;For most of the part, a developer tunes the model by changing several hyper-parameters. However, any choice of such hyper-parameters comes either by experience and deep insight, or certain guidelines as provided by the architecture developers (based on ablation studies).&lt;/p&gt;
+
+&lt;p&gt;We propose to develop a meta-learning algorithm that takes a specified model architecture and tunes it to match the performance requirement on a particular smart-device. More specifically, we propose to build a policy that iteratively removes weights, channels, and layers in a vision-based model to improve upon execution efficiency while maintaining the prediction accuracy. We show that once the policy is constructed on a particular platform, the domain knowledge can be transferred to construct a policy for a different platform.&lt;/p&gt;
 </description>
     </item>
     

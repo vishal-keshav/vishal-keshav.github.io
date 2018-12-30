@@ -15,7 +15,7 @@
   
     
   
-  <meta name="description" content="ML101 These paper appeared in several renowned conferences around the world with an impact of making inference faster in deep learning terminology. Ideas from these paper have been extracted and presented in a simplified manner.  Papers yet to be published Papers from 2017 More is Less: A More Complicated Network with Less Inference Complexity Problem solved: With each convolution layer, reduce the computation of convolution that results in zero activation.">
+  <meta name="description" content="Papers from 2018 Updating soon...  Papers from 2017 More is Less: A More Complicated Network with Less Inference Complexity Problem solved: With each convolution layer, reduce the computation of convolution that results in zero activation.   Hints about zero features that may lead to zero activation is given by a parallel light-weight convolution (either spatial or depth wise) activation. LCCL (low cost collaborative layer) are parallel low cost convolutions providing zero outcome hints to main convolution.">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/review-dnn/">
@@ -81,6 +81,20 @@
 
   
   
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-131439197-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
   
 
   
@@ -105,10 +119,10 @@
   <meta property="og:site_name" content="Vishal Keshav">
   <meta property="og:url" content="/post/review-dnn/">
   <meta property="og:title" content="Review of Computer Vision Architecture | Vishal Keshav">
-  <meta property="og:description" content="ML101 These paper appeared in several renowned conferences around the world with an impact of making inference faster in deep learning terminology. Ideas from these paper have been extracted and presented in a simplified manner.  Papers yet to be published Papers from 2017 More is Less: A More Complicated Network with Less Inference Complexity Problem solved: With each convolution layer, reduce the computation of convolution that results in zero activation."><meta property="og:image" content="/post/review-dnn/featured.png">
+  <meta property="og:description" content="Papers from 2018 Updating soon...  Papers from 2017 More is Less: A More Complicated Network with Less Inference Complexity Problem solved: With each convolution layer, reduce the computation of convolution that results in zero activation.   Hints about zero features that may lead to zero activation is given by a parallel light-weight convolution (either spatial or depth wise) activation. LCCL (low cost collaborative layer) are parallel low cost convolutions providing zero outcome hints to main convolution."><meta property="og:image" content="/post/review-dnn/featured.png">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2018-04-20T00:00:00&#43;05:30">
+  <meta property="article:published_time" content="2018-09-20T00:00:00&#43;05:30">
   
   <meta property="article:modified_time" content="2018-01-13T00:00:00&#43;05:30">
   
@@ -323,7 +337,7 @@
     
         Last updated on
     
-    <meta content="2018-04-20 00:00:00 &#43;0530 IST" itemprop="datePublished">
+    <meta content="2018-09-20 00:00:00 &#43;0530 IST" itemprop="datePublished">
     <time datetime="2018-01-13 00:00:00 &#43;0530 IST" itemprop="dateModified">
       Jan 13, 2018
     </time>
@@ -444,7 +458,7 @@
     
         Last updated on
     
-    <meta content="2018-04-20 00:00:00 &#43;0530 IST" itemprop="datePublished">
+    <meta content="2018-09-20 00:00:00 &#43;0530 IST" itemprop="datePublished">
     <time datetime="2018-01-13 00:00:00 &#43;0530 IST" itemprop="dateModified">
       Jan 13, 2018
     </time>
@@ -539,16 +553,12 @@
     <div class="article-style" itemprop="articleBody">
       
 
-<h1 id="ml101">ML101</h1>
-
 <p><img src="res/cover.jpg" alt="Cover" /></p>
 
-<pre><code class="language-A">These paper appeared in several renowned conferences around the world with
-an impact of making inference faster in deep learning terminology.
-Ideas from these paper have been extracted and presented in a simplified manner.
-</code></pre>
+<h2 id="papers-from-2018">Papers from 2018</h2>
 
-<h2 id="papers-yet-to-be-published">Papers yet to be published</h2>
+<pre><code>Updating soon...
+</code></pre>
 
 <hr />
 
@@ -562,11 +572,11 @@ activation.
 </code></pre>
 
 <ul>
-<li>Hints that the computation will lead to zero activation
-is given by a parallel light-weight convolution&rsquo;s (either spatial or depth wise) activation.</li>
-<li>LCCL (low cost collaborative layer) are parallel low cost convolutions providing hints to main convolution that output gonna be zero</li>
+<li>Hints about zero features that may lead to zero activation
+is given by a parallel light-weight convolution (either spatial or depth wise) activation.</li>
+<li>LCCL (low cost collaborative layer) are parallel low cost convolutions providing zero outcome hints to main convolution.</li>
 <li>To increase the sparsity, methods such as using RelU activation and Batch Normalization is explored.</li>
-<li>Some lights on GEMM and GEMV has been also put to argue about theoretical and practical acceleration improvements.</li>
+<li>Mentions of GEMM and GEMV for theoretical and practical acceleration improvements.</li>
 </ul>
 
 <p><img src="res/more_is_less.jpg" alt="more_is_less" />
@@ -576,16 +586,16 @@ is given by a parallel light-weight convolution&rsquo;s (either spatial or depth
 
 <h3 id="learning-efficient-convolutional-networks-through-network-slimming">Learning Efficient Convolutional Networks through Network Slimming</h3>
 
-<pre><code>Problem solved: Reduction of input input channels that have near
-zero activation by enforcing L1 norm to be zero along with regularization
+<pre><code>Problem solved: Reducing the input channels that have near
+zero activation, by enforcing L1 norm to be zero along with regularization
 effect. Lesser the input channels, faster the inference.
 </code></pre>
 
 <ul>
-<li>Input channel are pruned during training by enforcing L1 norm to become zero.</li>
+<li>Input channel are pruned during the training by enforcing L1 norm to become zero.</li>
 <li>L1 regularization on scaling factor of batch normalization layers per channel does not require any architectural changes.</li>
 <li>Zero L1 enforcement per channel is achieved by addition of L1 norm of batch in the total cost function which then is needed to be minimized.</li>
-<li>A little bit in drop of accuracy can be restored by retraining while multi-pass scheme can be applied to push more channel pruning</li>
+<li>Drop in the prediction accuracy can be restored by retraining with multi-pass scheme.</li>
 </ul>
 
 <p><img src="res/network_slimming.jpg" alt="network_slimming" />
@@ -602,8 +612,8 @@ of convolution at current layer and next layer decreases.
 </code></pre>
 
 <ul>
-<li>Filters in a given layer of a trained model are compared against each other based on L1 norm, and removed with lease (proportionally)</li>
-<li>Removal of filters is done in a single shot for whole network, after which training can be done to restore accuracy</li>
+<li>Filters in a given layer of a trained model are compared against each other based on L1 norm, and removed proportionally.</li>
+<li>Removal of filters is done in a single shot for whole network, after which training can be done to restore the accuracy</li>
 <li>Pruning filters across multiple layer can be done in either independent or greedy way.</li>
 <li>Sensitivity of pruning filters in a given layer is measured by the rate at which accuracy decreases with respect to number of pruned filter. Highly sensitive layers are left out for pruning.</li>
 </ul>
@@ -1309,10 +1319,8 @@ This can effectively produce invariance to rotation and scaling
       
       
       
-        
-      
       <li>
-        <a itemprop="sameAs" href="/#contact" >
+        <a itemprop="sameAs" href="mailto:vishal.keshav.1993@gmail.com" >
           <i class="fas fa-envelope"></i>
         </a>
       </li>

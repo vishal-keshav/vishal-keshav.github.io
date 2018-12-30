@@ -4,8 +4,48 @@
     
     <url>
     
-      <loc>/project/xcelerator/</loc>
+      <loc>/project/interpreter/</loc>
       <lastmod>2018-09-27T00:00:00+05:30</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/project/parallel-matrix-multiplication/</loc>
+      <lastmod>2018-09-27T00:00:00+05:30</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/project/py-game/</loc>
+      <lastmod>2018-09-27T00:00:00+05:30</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/project/tiny-ml-framework/</loc>
+      <lastmod>2018-09-27T00:00:00+05:30</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/project/uva/</loc>
+      <lastmod>2018-09-27T00:00:00+05:30</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/review-dnn/</loc>
+      <lastmod>2018-01-13T00:00:00+05:30</lastmod>
     </url>
     
   
@@ -60,48 +100,8 @@
     
     <url>
     
-      <loc>/project/interpreter/</loc>
-      <lastmod>2018-04-27T00:00:00+05:30</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/project/parallel-matrix-multiplication/</loc>
-      <lastmod>2018-04-27T00:00:00+05:30</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/project/py-game/</loc>
-      <lastmod>2018-04-27T00:00:00+05:30</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/project/tiny-ml-framework/</loc>
-      <lastmod>2018-04-27T00:00:00+05:30</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/project/uva/</loc>
-      <lastmod>2018-04-27T00:00:00+05:30</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/post/review-dnn/</loc>
-      <lastmod>2018-01-13T00:00:00+05:30</lastmod>
+      <loc>/project/xcelerator/</loc>
+      <lastmod>2018-08-19T00:00:00+05:30</lastmod>
     </url>
     
   
@@ -151,7 +151,7 @@
     <url>
     
       <loc>/tags/codeon/</loc>
-      <lastmod>2018-04-27T00:00:00+05:30</lastmod>
+      <lastmod>2018-09-27T00:00:00+05:30</lastmod>
       <priority>0</priority>
     </url>
     
@@ -169,7 +169,7 @@
     <url>
     
       <loc>/tags/machine-learning/</loc>
-      <lastmod>2018-04-27T00:00:00+05:30</lastmod>
+      <lastmod>2018-09-27T00:00:00+05:30</lastmod>
       <priority>0</priority>
     </url>
     
@@ -178,7 +178,7 @@
     <url>
     
       <loc>/tags/machine-learning/</loc>
-      <lastmod>2018-09-27T00:00:00+05:30</lastmod>
+      <lastmod>2018-08-19T00:00:00+05:30</lastmod>
       <priority>0</priority>
     </url>
     
@@ -220,7 +220,7 @@
     <url>
     
       <loc>/tags/</loc>
-      <lastmod>2018-04-27T00:00:00+05:30</lastmod>
+      <lastmod>2018-09-27T00:00:00+05:30</lastmod>
       <priority>0</priority>
     </url>
     

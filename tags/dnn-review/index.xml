@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Fri, 20 Apr 2018 00:00:00 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 20 Sep 2018 00:00:00 +0530</lastBuildDate>
     
 	<atom:link href="/tags/dnn-review/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,10 +15,10 @@
     <item>
       <title>Review of Computer Vision Architecture</title>
       <link>/post/review-dnn/</link>
-      <pubDate>Fri, 20 Apr 2018 00:00:00 +0530</pubDate>
+      <pubDate>Thu, 20 Sep 2018 00:00:00 +0530</pubDate>
       
       <guid>/post/review-dnn/</guid>
-      <description>ML101 These paper appeared in several renowned conferences around the world with an impact of making inference faster in deep learning terminology. Ideas from these paper have been extracted and presented in a simplified manner.  Papers yet to be published Papers from 2017 More is Less: A More Complicated Network with Less Inference Complexity Problem solved: With each convolution layer, reduce the computation of convolution that results in zero activation.</description>
+      <description>Papers from 2018 Updating soon...  Papers from 2017 More is Less: A More Complicated Network with Less Inference Complexity Problem solved: With each convolution layer, reduce the computation of convolution that results in zero activation.   Hints about zero features that may lead to zero activation is given by a parallel light-weight convolution (either spatial or depth wise) activation. LCCL (low cost collaborative layer) are parallel low cost convolutions providing zero outcome hints to main convolution.</description>
     </item>
     
   </channel>

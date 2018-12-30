@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Fri, 27 Apr 2018 00:00:00 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 27 Sep 2018 00:00:00 +0530</lastBuildDate>
     
 	<atom:link href="/tags/codeon/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Interpreter</title>
       <link>/project/interpreter/</link>
-      <pubDate>Fri, 27 Apr 2018 00:00:00 +0530</pubDate>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 +0530</pubDate>
       
       <guid>/project/interpreter/</guid>
       <description></description>
@@ -24,7 +24,7 @@
     <item>
       <title>Matrix-matrix multiplication</title>
       <link>/project/parallel-matrix-multiplication/</link>
-      <pubDate>Fri, 27 Apr 2018 00:00:00 +0530</pubDate>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 +0530</pubDate>
       
       <guid>/project/parallel-matrix-multiplication/</guid>
       <description></description>
@@ -33,7 +33,7 @@
     <item>
       <title>UVa</title>
       <link>/project/uva/</link>
-      <pubDate>Fri, 27 Apr 2018 00:00:00 +0530</pubDate>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 +0530</pubDate>
       
       <guid>/project/uva/</guid>
       <description></description>
