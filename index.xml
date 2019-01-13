@@ -838,7 +838,7 @@ This can effectively produce invariance to rotation and scaling
 
 &lt;p&gt;For most of the part, a developer tunes the model by changing several hyper-parameters. However, any choice of such hyper-parameters comes either by experience and deep insight, or certain guidelines as provided by the architecture developers (based on ablation studies).&lt;/p&gt;
 
-&lt;p&gt;We propose to develop a meta-learning algorithm that takes a specified model architecture and tunes it to match the performance requirement on a particular smart-device. More specifically, we propose to build a policy that iteratively removes weights, channels, and layers in a vision-based model to improve upon execution efficiency while maintaining the prediction accuracy. We show that once the policy is constructed on a particular platform, the domain knowledge can be transferred to construct a policy for a different platform.&lt;/p&gt;
+&lt;p&gt;In this project, we propose to develop a meta-learning algorithm that takes a specified model architecture and tunes it to match the performance requirement on a particular smart-device. More specifically, we propose to build a policy that iteratively removes weights, channels, and layers in a vision-based model to improve upon execution efficiency while maintaining the prediction accuracy. We show that once the policy is constructed on a particular platform, the domain knowledge can be transferred to construct a policy for a different platform.&lt;/p&gt;
 </description>
     </item>
     
