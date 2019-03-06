@@ -4,6 +4,14 @@
     
     <url>
     
+      <loc>/project/fast-prototype/</loc>
+      <lastmod>2019-01-27T00:00:00+05:30</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/project/interpreter/</loc>
       <lastmod>2018-09-27T00:00:00+05:30</lastmod>
     </url>
@@ -169,7 +177,7 @@
     <url>
     
       <loc>/tags/machine-learning/</loc>
-      <lastmod>2018-09-27T00:00:00+05:30</lastmod>
+      <lastmod>2019-01-27T00:00:00+05:30</lastmod>
       <priority>0</priority>
     </url>
     
@@ -187,7 +195,7 @@
     <url>
     
       <loc>/project/</loc>
-      <lastmod>2018-09-27T00:00:00+05:30</lastmod>
+      <lastmod>2019-01-27T00:00:00+05:30</lastmod>
       <priority>0</priority>
     </url>
     
