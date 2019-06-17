@@ -1,0 +1,867 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vishal Keshav</title>
+    <link>/authors/admin/</link>
+    <description>Recent content on Vishal Keshav</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019</copyright>
+    <lastBuildDate>Wed, 15 May 2019 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="/authors/admin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Prior belief and its relationship with regularization</title>
+      <link>/post/regularization/</link>
+      <pubDate>Wed, 15 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/regularization/</guid>
+      <description>
+
+&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+
+&lt;p&gt;Regularization techniques are a widely explored topic in machine learning that is used for improving generalization accuracy or reducing the overfitting of the data in a machine learning model. Regularization strategies involve either imposing a hard (or explicit) constraint or a soft (or implicit) constraints on the parameters of the model. Ridge regularizer (often referred to as $L2$) and Lasso regularizer (often referred to as $L1$) are some of the explicit regularizers that impose a direct constraint on the parameter. For example, $L1$ constraints the parameters in a space such that most of the parameter values equal to zero. Implicit regularization approach imposes a soft constraint on the parameters by modifying the optimization function. A popular approach called dropout is an example of such implicit regularizer that tunes the values of the parameters by the means of optimization function.&lt;/p&gt;
+
+&lt;p&gt;The goal of this article is neither to list down the regularization techniques commonly used in machine learning nor is to describe when and how the regularizers are being used, but to take a step back and understand the importance of prior (an expression of our belief on the values of the parameters) that is embodied in any regularization approach. Towards this end, we will look into two fundamental approaches of parameter estimation methods namely &amp;ldquo;Maximum Likelihood Estimation (MLE)&amp;rdquo; and &amp;ldquo;Maximum a Posteriori (MAP)&amp;rdquo; and see how the later approach regularizes the model better by using prior knowledge about the estimate. We will start with the first approach, MLE.&lt;/p&gt;
+
+&lt;h1 id=&#34;mle-overfits&#34;&gt;MLE Overfits&lt;/h1&gt;
+
+&lt;p&gt;Any meaningful data has some underlying statistical property. For any data we get, it is reasonable to assume that there exists a data generating distribution that has generated the subset of available data. Our objective is to infer the distribution by analyzing the hidden statistical property in the observed data.&lt;/p&gt;
+
+&lt;p&gt;Let us assume that the available data is given by $D$ where $D$ = $(x_{1},x_{2},&amp;hellip;,x_{n})$ and each $x_{i}$ corresponds to $i^{th}$ data point and $x_{i}$ $\in$ $\mathbb{R}^{d}$. Furthermore, we assume that each data point is being generated independently by a common data generating distribution denoted by $P(X/\theta)$ or in other words, each data point $x_{i}$ is sampled from a random variable $X_{i}$ $\sim$  $P$.&lt;/p&gt;
+
+&lt;p&gt;We intend to estimate the true parameter $\theta$ of the assumed data distribution. MLE approaches this problem by maximizing the likelihood function $P(data/\theta)$, or more formally
+$$
+\begin{equation}
+\theta_{MLE} = \operatorname*{arg\,max}_\theta P(X_{1}=x_{1},X_{2}=x_{2},&amp;hellip;,X_{n}=x_{n}/\theta)
+\end{equation}
+$$&lt;/p&gt;
+
+&lt;p&gt;Since it is assumed that the data distribution are identical and independent, by using the conditional independence rule (conditioned on $\theta$) on the joint probability distribution (over $X_{i}$), we get
+$$
+\begin{equation}
+\theta_{MLE} = \operatorname*{arg\,max}_\theta \prod_{i=1}^{n}P(X_{i}/\theta)
+\end{equation}
+$$&lt;/p&gt;
+
+&lt;p&gt;Taking a concrete example of data distribution, we can derive the maximum likelihood estimate. Lets suppose that data follows a Gaussian distribution (which is a reasonable assumption for scalar data points), and the parameters we are interested in is the mean (denoted by $\mu$) where we keep the variance (denoted by $\sigma^{2}$) a constant, i.e. $X_{i}$ $\sim$ $\mathcal{N}(\mu , \sigma^{2})$.
+Here, the only parameter we want to estimate is the $\theta = \mu$.&lt;/p&gt;
+
+&lt;p&gt;Following the Gaussian density function for the given data distribution and the Independent and identically distributed (IID) assumptions, from previous equation we get
+$$
+\begin{equation}
+\theta_{MLE} = \operatorname*{arg\,max}_\theta \left ( \frac{1}{\sqrt{2\pi\sigma^{{2}}}} \right ) exp\left ( -\frac{1}{2\sigma^{2}}\sum_{i=1}^{n}(x_{i} - \mu)^2 \right )
+\end{equation}
+$$&lt;/p&gt;
+
+&lt;p&gt;Since the logarithm is a monotonically increasing function, we can maximize $\log$ of the right side expression and equivalently get the parameter of interest.&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{align}
+\theta_{MLE} &amp;amp; = \operatorname*{arg\,max}_\theta \log P(data/\theta) \\&lt;br /&gt;
+&amp;amp; = \operatorname*{arg\,max}_\theta -\frac{n}{2}\log(2\pi\sigma^2) - \frac{1}{2\sigma^2}\sum_{i=1}^{n}(x_{i} - \mu)
+\end{align}
+$$&lt;/p&gt;
+
+&lt;p&gt;fetches us $\mu$ = $\frac{\sum_{i=1}^{n}x_{i}}{n}$ which is the sample mean. Here we can see that if the dataset is small, the MLE estimate memorizes both the signal and the noise from the data even if we may have some idea of where the parameter should lie.&lt;/p&gt;
+
+&lt;p&gt;An apt representation of this is idea is shown in the figure below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/figure.png&#34; alt=&#34;figure&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;When the number of parameter increases and the number of data point remains small, the MLE estimates a complicated function that more often tries to fit the noise present in the data and diverges from the actual data distribution. In the next section, we will see how the MAP estimate overcome this drawback by introducing something called &amp;ldquo;prior&amp;rdquo;.&lt;/p&gt;
+
+&lt;h1 id=&#34;map-regularizes&#34;&gt;MAP Regularizes&lt;/h1&gt;
+
+&lt;p&gt;Our problem statement remains the same as that of MLE, but our assumptions about the underlying statistical properties of the data is a bit different. We now assume that we have a full knowledge about the joint distribution of data and the underlying data distribution&amp;rsquo;s parameter, as denoted by $P(X_{1}, X_{2},&amp;hellip;,X_{n},\theta)$. Here, we note that the $\theta$ is now a random variable. Although $\theta$ is a random variable now, MAP estimates are the point estimates that evaluate the parameter that maximizes a certain condition, in this case it is the posterior distribution of $\theta$ given the data. Formally,&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{align}
+\theta_{MAP} &amp;amp; = \operatorname*{arg\,max}_\theta P(\theta/X_{1},X_{2},&amp;hellip;,X_{n})\\&lt;br /&gt;
+&amp;amp; = \operatorname*{arg\,max}_\theta \frac{P(X_{1}, X_{2},&amp;hellip;,X_{n},\theta)}{P(X_{1}, X_{2},&amp;hellip;,X_{n})}\\&lt;br /&gt;
+&amp;amp; = \operatorname*{arg\,max}_\theta P(X_{1}, X_{2},&amp;hellip;,X_{n}/\theta)*P(\theta)
+\end{align}
+$$&lt;/p&gt;
+
+&lt;p&gt;using proportionality and Bayes theorem.
+Taking log and using IID assumption on right-hand side of the expression, we get
+$$
+\begin{equation}
+\theta_{MAP} = \operatorname*{arg\,max}_\theta \sum_{i=1}^{n}\log P(X_{i} = x_{i}/\theta) + \log P(\theta)
+\end{equation}
+$$&lt;/p&gt;
+
+&lt;p&gt;We again take a concrete example by assuming a joint distribution of data and parameter. Alternatively, we assume that the conditional data distribution conditioned on parameter $\mu$ follows $\mathcal{N}(\mu, \sigma^{2})$ where $\theta = \mu$, $\sigma$ is kept as a constant and the parameter $\mu$ is distributed normally with mean $\mu^{*}$ and a variance of 1 i.e. $\mu$ = $\theta$ $\sim$ $\mathcal{N}(\mu^{*}, 1)$. Under these univariate Gaussian assumptions for data and parameter, we can maximize the logarithm of the posterior to estimate the point estimate for $\theta$.
+$$
+\begin{align}
+\theta_{MAP} = \operatorname*{arg\,max}_\theta &amp;amp; \left ( \frac{1}{\sqrt{2\pi\sigma^{{2}}}} \right ) exp\left ( -\frac{1}{2\sigma^{2}}\sum_{i=1}^{n}(x_{i} - \mu)^2 \right ) + \\\ &amp;amp; \left ( \frac{1}{\sqrt{2\pi}} \right ) exp\left ( -\frac{1}{2}(\mu - \mu^{*})^2 \right )
+\end{align}
+$$&lt;/p&gt;
+
+&lt;p&gt;Differentiating the right-hand side and equating it to zero, the expression evaluates to
+$$
+\begin{equation}
+\frac{1}{\sigma^{2}}\left ( \sum_{i=1}^{n}(x_{i}-n\mu)^{2} \right ) + (\mu^{*} - \mu) = 0
+\end{equation}
+$$
+Rearranging the $\mu$ on one side, we get
+$\mu = \frac{\sum_{i=1}^{n}x_{i}}{\sigma^2 + n} + \frac{\sigma^{2}}{\sigma^{2}+n}\mu^{*}$
+Since, $\overline{x} = \frac{\sum_{i=1}^{n}x_{i}}{n}$ is the sample mean, we can write the above equation as
+$$
+\begin{equation}
+\theta_{MLE} = \frac{n}{\sigma^2 + n}\overline{x} + \frac{\sigma^{2}}{\sigma^{2}+n}\mu^{*}
+\end{equation}
+$$
+From the above expression, we can see that the $\theta_{MLE}$ is a convex combination of sample mean $\overline{x}$ and the prior mean $\mu^{*}$. The prior mean $\mu^{*}$ reflects our prior belief about where the mean should be before we observe any data. When the number of data points are less, more weightage is given on the prior mean which helps in achieving regularization through reducing the data overfitting. In an extream case where $n \rightarrow \infty$, $\frac{n}{\sigma^2 + n} \rightarrow 1$ and $\frac{\sigma^{2}}{\sigma^{2}+n} \rightarrow 0 $, the parameter estimation is dominated by sample mean (which will reasonably estimate the actual parameter of the data distribution). When the number of data points are sufficient, the parameter estimate is well guided by the observed data, otherwise we partially rely on our prior knowledge of what value a parameter should assume.&lt;/p&gt;
+
+&lt;p&gt;Refer the figure below for an intuitive understanding.
+&lt;img src=&#34;res/figure2.png&#34; alt=&#34;figure2&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;summary&#34;&gt;Summary&lt;/h1&gt;
+
+&lt;p&gt;In this article, we explored two fundamental parameter estimation algorithm namely Maximum Likelihood Estimation and Maximum a Posteriori. By taking concrete examples of the distribution (along with several reasonable assumptions), we argued that MAP estimates induce regularization through prior over the parameters.&lt;/p&gt;
+
+&lt;p&gt;In a traditional Bayesian setup, a prior is explicitly modeled, but in a deep learning setting, this may take several forms. Whatever be the case, prior knowledge induces better inductive bias and this can be achieved through designing the architecture, curating of the training data and the choice of the optimization procedure. A more direct approach of imposing the prior for regularizing a model can be seen in the process of distillation. A teacher network is trained without any prior data, and when it is trained, the knowledge (in terms of prior) is distilled in the student network. Formulating a better and more explicit approach to induce prior in deep learning systems is an active area of research which we will explore further in subsequent articles.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A review of Computer Vision Architecture</title>
+      <link>/post/review-cv/</link>
+      <pubDate>Thu, 20 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/review-cv/</guid>
+      <description>
+
+&lt;h3 id=&#34;more-is-less-a-more-complicated-network-with-less-inference-complexity&#34;&gt;More is Less: A More Complicated Network with Less Inference Complexity&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: With each convolution layer, reduce
+the computation of convolution that results in zero
+activation.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Hints about zero features that may lead to zero activation
+is given by a parallel light-weight convolution (either spatial or depth wise) activation.&lt;/li&gt;
+&lt;li&gt;LCCL (low cost collaborative layer) are parallel low cost convolutions providing zero outcome hints to main convolution.&lt;/li&gt;
+&lt;li&gt;To increase the sparsity, methods such as using RelU activation and Batch Normalization is explored.&lt;/li&gt;
+&lt;li&gt;Mentions of GEMM and GEMV for theoretical and practical acceleration improvements.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/more_is_less.jpg&#34; alt=&#34;more_is_less&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1703.08651&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;learning-efficient-convolutional-networks-through-network-slimming&#34;&gt;Learning Efficient Convolutional Networks through Network Slimming&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: Reducing the input channels that have near
+zero activation, by enforcing L1 norm to be zero along with regularization
+effect. Lesser the input channels, faster the inference.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Input channel are pruned during the training by enforcing L1 norm to become zero.&lt;/li&gt;
+&lt;li&gt;L1 regularization on scaling factor of batch normalization layers per channel does not require any architectural changes.&lt;/li&gt;
+&lt;li&gt;Zero L1 enforcement per channel is achieved by addition of L1 norm of batch in the total cost function which then is needed to be minimized.&lt;/li&gt;
+&lt;li&gt;Drop in the prediction accuracy can be restored by retraining with multi-pass scheme.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/network_slimming.jpg&#34; alt=&#34;network_slimming&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1708.06519v1&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;pruning-filters-for-efficient-convnets&#34;&gt;Pruning Filters For Efficient Convnets&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: Reduction in number of filters with low L1 norm.
+These filters are assumed to have insignificant contribution to
+output channels. With reduced filters, both complexity of computation
+of convolution at current layer and next layer decreases.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Filters in a given layer of a trained model are compared against each other based on L1 norm, and removed proportionally.&lt;/li&gt;
+&lt;li&gt;Removal of filters is done in a single shot for whole network, after which training can be done to restore the accuracy&lt;/li&gt;
+&lt;li&gt;Pruning filters across multiple layer can be done in either independent or greedy way.&lt;/li&gt;
+&lt;li&gt;Sensitivity of pruning filters in a given layer is measured by the rate at which accuracy decreases with respect to number of pruned filter. Highly sensitive layers are left out for pruning.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/filter_pruning.jpg&#34; alt=&#34;filter_pruning&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1608.08710v3&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;data-driven-sparse-structure-selection-for-deep-neural-networks&#34;&gt;Data-Driven Sparse Structure Selection for Deep Neural Networks&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: A systematic approach to prune structures is a
+deep network including filters or neurons, resnet blocks and grouped
+convolution (cardinality) is presented. Additional parameters
+in cost function is enforced to zero in order to realize structure
+pruning.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A general end-to-end framework for pruning structures at once without the need for retraining.&lt;/li&gt;
+&lt;li&gt;Scaling factors is not needed to be necessarily associated to network weights (so does the gradients), these are generalized parameters and gradients are computed in additions to weight gradients&lt;/li&gt;
+&lt;li&gt;Accelerated Proximal Gradient is adopted for scaling factor training&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/sparse_structure.jpg&#34; alt=&#34;sparse_structure&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1707.01213v2&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;pruning-convolutional-neural-networks-for-resource-efficient-inference&#34;&gt;Pruning Convolutional Neural Networks For Resource Efficient Inference&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: Evaluates/proposes the greedy criterion for pruning
+feature maps with an objective of minimizing the cost difference
+before and after pruning along with L1 norm constraints on pruned
+weights. With FLOPs criteria, it achieves resource efficient inference.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It formalizes the gated pruning (i.e. if this feature channel be pruned or not) based on greedy criteria such as minimized weight, mean, deviation of activation, information gain, first order taylor expansion etc.&lt;/li&gt;
+&lt;li&gt;System has two steps, pruning in which based on criteria, the importance of neurons is evaluated and pruned&lt;/li&gt;
+&lt;li&gt;Training in which it trains the network with constrained cost object in consideration.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/criteria_pruning.jpg&#34; alt=&#34;criteria_pruning&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1611.06440v2&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;condensenet-an-efficient-densenet-using-learned-group-convolutions&#34;&gt;CondenseNet: An Efficient DenseNet using Learned Group Convolutions&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: Improves the dense-net by introducing the concept
+of learned group convolution. Condensing and optimization
+(both being the part of training phase) helps prune filters per
+logical groups which gets re-arranged by indexing to formulate
+normal group convolution. Better design strategy for dense-net
+is also proposed.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Exponential growth rate of input channel is compensated by using depth wise separable convolution in case of dense net. Condense net improvises this by group convolution that learns the grouping.&lt;/li&gt;
+&lt;li&gt;Method used allows groups to automatically select appropriate channels or not use some at all. Since this architecture follows dense-net, non-used channels will be useful in another layer.&lt;/li&gt;
+&lt;li&gt;Condense stage involves pruning per group by sparsity regularizer and optimization stage (second half of training stage) involves re-arranging and indexing of input filters for group convolution.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/condense_net.jpg&#34; alt=&#34;condense_net&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1711.09224v1&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;delugenets-deep-networks-with-efficient-and-flexible-cross-layer-information-inflows&#34;&gt;DelugeNets: Deep Networks with Efficient and Flexible Cross-layer Information Inflows&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: Effectively propagating cross layers parameters
+as compared to residual blocks but at the same time being more
+efficient that dense-nets. Through cross-layer depthwise convolution
+the efficient information flow is possible whilst providing more
+flexibility than resnets.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Per block, composite network is used (bottle neck design) having same map dimentions.&lt;/li&gt;
+&lt;li&gt;In one block, inputs from each preceding layers are convolved by point wise convolution channel wise. In other words, for a given channel c, all the filter maps at channel c from preceding layers are segregated and convolved depthwise to get filter map of channel c in the input layer. Same process to all channels.&lt;/li&gt;
+&lt;li&gt;For block transition (where dimention changes), 3X3 strided filters are applied to match the input dimentions.&lt;/li&gt;
+&lt;li&gt;Whole idea is to have cross layer separable convolution to reduce computation complexity.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/deluge_net.jpg&#34; alt=&#34;deluge_net&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1611.05552v5&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;deep-pyramidal-residual-networks&#34;&gt;Deep Pyramidal Residual Networks&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: Through empirical studies, it was found that
+increase in feature map dimention at residual blocks significantly
+increase the resnet burden at those layers. Thus, a gradual increase
+in feature map depth is introduced which increase accuracy.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Pyramidal shape is introduced which gradually increase the filters at every layer. Skip connections are done through zero padding instead of 1X1 convolution.&lt;/li&gt;
+&lt;li&gt;Several pyramidal designs are explored which increase the filters as a function of layer index.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/pyramid_net.jpg&#34; alt=&#34;pyramid_net&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1610.02915v4&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;deep-expander-networks-efficient-deep-networks-from-graph-theory&#34;&gt;Deep Expander Networks: Efficient Deep Networks from Graph Theory&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: Solves high connectivity (for good representational
+power by efficient information flow through network) but remaining
+under a given level of sparsity. This reduces the inference time
+with similar accuracy levels.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Explores graph theory (expanders graphs), in which layer connections are modelled as several bipartite graphs connected after each other.&lt;/li&gt;
+&lt;li&gt;In each bipartite connections, limits the number of edges but still having all connections globally.&lt;/li&gt;
+&lt;li&gt;For structured sparsity, random expanders and explcit expanders are proposed.&lt;/li&gt;
+&lt;li&gt;Explicit expanders are formulated under XOR operation of some group generators and output vertex set.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/x_net.jpg&#34; alt=&#34;x_net&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1711.08757v2&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;aggregated-residual-transformations-for-deep-neural-networks&#34;&gt;Aggregated Residual Transformations for Deep Neural Networks&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: Improves the representational power of network to
+reduce the number of parameters used. Proposed cardinality as a
+hyper-parameter along with width and depth of the network which
+is easy to manage. Aggregation of transformed input with addition
+to produce output is proposed. Design space for mentioned network
+has lesser parameters (which is cardinality). Increasing cardinality
+is more effective than increasing depth or width to gain accuracy.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Homogeneous input transform is proposed for implementation which is followed by aggregation or addition (bottleneck architecture).&lt;/li&gt;
+&lt;li&gt;Conceptual difference as compared to Inception-resnet lies in topology followed by each transformation paths. Its the same in this proposal.&lt;/li&gt;
+&lt;li&gt;Conceptual difference as compared to group convolution lies in the fact that grouping can be done only upto one layer, whereas proposed system goes beyond one layer of transformation path.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/res_next.jpg&#34; alt=&#34;res_nex&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1611.05431v2&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;deeprebirth-accelerating-deep-neural-network-execution-on-mobile-devices&#34;&gt;DeepRebirth: Accelerating Deep Neural Network Execution on Mobile Devices&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: Inference acceleration by streamline slimming
+(combining across layer depth) and branch slimming (combining
+along network width) of tensors and non-tensors. Sparsity of tensors
+are exploited with less relevant high utilization non-tensors
+through combination and retraining.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Observation about excessive runtimes of non-tensor units are made and possibility of combining those with tensor nearby tensor units is explored.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/deep_rebirth.jpg&#34; alt=&#34;deep_rebirth&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1708.04728v1&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;accelerating-convolutional-neural-networks-for-continuous-mobile-vision-via-cache-reuse&#34;&gt;Accelerating Convolutional Neural Networks for Continuous Mobile Vision via Cache Reuse&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: Faster inference in continuous image data stream
+in mobile device is proposed by considering the previous layer
+image similarity with the current input. The idea has been generalized
+to reusing the blocks of initial convolution computations.
+Image similarity is measure block wise such that similar blocks
+are invariant of translation (diamond search).
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;For computation overhead, image blocks are compared for similarity.&lt;/li&gt;
+&lt;li&gt;For cache erosion (more relevant in deeper layers) where spatial location of data starts making less sense and cache reuse cannot be determined, reuse is restricted to initial layers.&lt;/li&gt;
+&lt;li&gt;Similar to input raw image, convolution output can be treated as input for next layer are cache reuse by spatially comparing the similarity is possible.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/cnn_cache.jpg&#34; alt=&#34;cnn_cache&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1712.01670v1&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;branchynet-fast-inference-via-early-exiting-from-deep-neural-networks&#34;&gt;BranchyNet: Fast Inference via Early Exiting from Deep Neural Networks&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: Proposes the usage of branches in deeper network
+for early stopping and as a way to regularize network. Conventional
+joint optimization based training is used.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Branches helps in faster inferences where convolution of other branches are dropped.&lt;/li&gt;
+&lt;li&gt;As a bi-product of this architecture, regularization and mitigation of vanishing gradient is achieved.&lt;/li&gt;
+&lt;li&gt;Design space for putting branches at different entry points of main branch is explored.&lt;/li&gt;
+&lt;li&gt;Better caching efficiency on CPU is shown.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/branchy_nets.jpg&#34; alt=&#34;branchy_nets&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1709.01686v1&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;crescendo-net-a-simple-deep-convoltional-neural-network-with-ensemble-behavior&#34;&gt;Crescendo Net: A Simple Deep Convoltional Neural Network with Ensemble Behavior&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: Basic building block called crescendo blocks are
+proposed wherein multiple convolution parallel layers with incremental
+depth enable whole network to act as ensembled network. As a results
+representational strength increases without using residuals.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The different depths of parallel paths lead to different receptive fields and therefore generate features in
+different abstract levels.&lt;/li&gt;
+&lt;li&gt;Design space for crescendo blocks are explored for less hyper-parameter tuning.&lt;/li&gt;
+&lt;li&gt;Memory efficient training is proposed where other parallel paths are frozen when training for one path is going on.&lt;/li&gt;
+&lt;li&gt;Like fractals-nets, drop-connects is used (dropping paths) along with dropouts.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/crescendo_nets.jpg&#34; alt=&#34;crescendo_nets&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1710.11176v1&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;blockdrop-dynamic-inference-paths-in-residual-networks&#34;&gt;BlockDrop: Dynamic Inference Paths in Residual Networks&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: Upon observation that human visual system spend
+less time on simple object and more on complex lead to a dynamic
+inferencing system that upon context (complexity of input), drops
+several convolution operation in between (can be modelled as dropping
+residual blocks). Policy for dropping residula blocks comes from
+policy network trained for maximizing accuracy while using minimum
+inference blocks(reward is formulated in such a way in reinforcement
+learning). Lesser computation on contextual inputs leads to reduction
+in inferencing time.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Pretrained resnets are jointly trained with policy network that has to output binary vector representing if blocks needs to be dropped or not based on difficulty of input image. Such policy network implicitly learns the input complexity representation.&lt;/li&gt;
+&lt;li&gt;Drop or not per layer is modelled as K dimentional bernoulli. To train the policy network, expected reward is maximized by expected gradient training procedure.&lt;/li&gt;
+&lt;li&gt;Initial steps use curriculum learning followed by joint tuning of policy network and resnet.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/block_drop.jpg&#34; alt=&#34;block_drop&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1711.08393v1&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;thinet-a-filter-level-pruning-method-for-deep-neural-network-compression&#34;&gt;ThiNet: A Filter Level Pruning Method for Deep Neural Network Compression&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: Filters of a given layer is pruned such that output
+of next to next layer is not being affected. This method differs in
+the regard that it does not consider immediate layer&#39;s channel activation
+in its optimization problem instead relies of having a network with
+maximum representation capacity. Doing so leads to smaller network
+without accuracy loss.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;After pruning, fine tuning is done to regain the accuracy.&lt;/li&gt;
+&lt;li&gt;Method is data driven as training example is used to determine the importance of a filter based on changes in next to next layer&amp;rsquo;s output(sampled for different pixel, spatial location).&lt;/li&gt;
+&lt;li&gt;Under optimization problem for next channel&amp;rsquo;s representaion strength, predefine compression rate is encoded which determines how many channels and hence how many previous layer filters has to be pruned.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/thi_net.jpg&#34; alt=&#34;thi_net&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://arxiv.org/pdf/1707.06342v1.pdf&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;eraserelu-a-simple-way-to-ease-the-training-of-deep-convolution-neural-networks&#34;&gt;EraseReLU: A Simple Way to Ease the Training of Deep Convolution Neural Networks&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: Eased the training along with accuracy improvements
+along lesser amount of computations by observing that network
+become too non-linearized by stacking up non-linear units. It proposes
+to proportionally remove relu units from each block of network module.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Going from sigmoid to relu helped a portion of neurons to get non-linearized instead of individual neurons per layer. Still, for such layers, application of relu did not linearize negative units.&lt;/li&gt;
+&lt;li&gt;Removing relu in proportion of number of layers helped to get all neurons linearize for several layers.&lt;/li&gt;
+&lt;li&gt;Removing relu from several spots has lead to increase in representational power of networks with less complexity.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/erase_relu.jpg&#34; alt=&#34;erase_relu&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1709.07634v2&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;sep-nets-small-and-effective-pattern-networks&#34;&gt;SEP-Nets: Small and Effective Pattern Networks&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem Solved: Observation that binarizing only 3X3 convolution(spatial
+feature extraction) and not 1X1 convolution (feature transformation) may
+lead to model compression with similar accuracy but a lower computation.
+Proposes Patter Residual Block on same concept, from which SEP-Nets module
+is constructed.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;At an equivalent accuracy of MobileNets, model size has been compressed.&lt;/li&gt;
+&lt;li&gt;Binarization can be done from initiation or train-binarize-tune method can be adopted.&lt;/li&gt;
+&lt;li&gt;Binarization of non-transformation convolution helps faster computation at inference time.&lt;/li&gt;
+&lt;li&gt;Instead of concatenation, addition operation is used where 1X1 works as inter residual connection.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/sep_net.jpg&#34; alt=&#34;sep_net&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1706.03912v1&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;local-binary-convolutional-neural-networks&#34;&gt;Local Binary Convolutional Neural Networks&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: By employing the techniques of local binary convolution
+(predefined filters) instead of learnable weights, paper proposes to reduce the
+number of parameters required to convolve. Predefined convolution followed by
+non-linear activation and the followed by 1X1 learnable convolution composes
+LBCNN modules.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;LBC anchor weights can be stochastically generated with required sparsity.&lt;/li&gt;
+&lt;li&gt;Difference map from LBC is produced by similar convolution but with pre-defined weights. Variable pivot and ordering is hence defined by that.&lt;/li&gt;
+&lt;li&gt;Bitmap from difference map is produced by using non-linearity such as sigmoid.&lt;/li&gt;
+&lt;li&gt;To compose the feature map, normal 1X1 convolution is used.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/lbcnn.jpg&#34; alt=&#34;LBCNN&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1608.06049v2&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;towards-accurate-binary-convolutional-neural-network&#34;&gt;Towards Accurate Binary Convolutional Neural Network&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem Solved: Unlike other binarization technique which straight forward binarizes
+weights and activation maps, this paper proposes to approximate the full precision by
+multiple binary filters or activations. With same accuracy, this technique has shown to
+be computationally efficient.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Using straight thorough estimator, binary filters can be trained. Further, binary filters(calculated using full precision weight mean and variance) may contain sift operator that can be learned.&lt;/li&gt;
+&lt;li&gt;Binary filter coefficients are computed at every train forward iteration by solving linear regression over actual weights and approximated weights.&lt;/li&gt;
+&lt;li&gt;Whole weight binarization and channel level binarization are suggested methods.&lt;/li&gt;
+&lt;li&gt;Activation in the similar way is binarized using multiple binary activation maps, in order to accelerated bitwise computation on FPGA.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/abc_net.jpg&#34; alt=&#34;abc_net&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1711.11294v1&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;clcnet-improving-the-efficiency-of-convolutional-neural-network-using-channel-local-convolutions&#34;&gt;clcNet: Improving the Efficiency of Convolutional Neural Network using Channel Local Convolutions&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem Solved: This paper proposes a structured way of composing group convolution
+such that full channel receptive field in a given block is 100 percent.
+This introduces the idea of more generalized channel local convolution
+and acyclic graph called channel dependency graph that connects
+output channel to input channel in a convolution block and measure channel
+receptive field of that convolution block.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Observation such as having full channel receptive field in a convolution block is required to have efficient information flow for better representational power in a CNN.&lt;/li&gt;
+&lt;li&gt;Interlaced group convolution, one of the two building block for cnc net is developed which with group convolution completes a convolution block.&lt;/li&gt;
+&lt;li&gt;Determination of block parameters such as number of groups in IGC and GC is done through minimizing a developed cost function per convolution block remaining under the full channel receptive field constraints.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/clc_net.jpg&#34; alt=&#34;clc_net&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1712.06145v2&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;the-enhanced-hybrid-mobilenet&#34;&gt;The Enhanced Hybrid MobileNet&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: With some heuristics, paper managed to improve the baseline
+mobilenet accuracy. Added a third parameter depth and played around with
+fractional pooling.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Have formulated the computation and parameters ratio with newly added depth parameter.&lt;/li&gt;
+&lt;li&gt;With heuristics approach, improved the baseline accuracy while maintaining the parameter and computation ratio same.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/en_mob.jpg&#34; alt=&#34;en_mob&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1712.04698v1&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;dropmax-adaptive-stochastic-softmax&#34;&gt;DropMax: Adaptive Stochastic Softmax&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem Solved: Paper proposes to drop exponential terms from logits
+randomly so that network becomes an ensemble of exponential number of
+networks each trained on a different subset of problem. Logit dropout
+probabilities are learned during training steps.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Each training step is considered to be ensemble of exponential models.&lt;/li&gt;
+&lt;li&gt;Computationally intractable probability calculation during inference is approximated with monte-carlo approximations.&lt;/li&gt;
+&lt;li&gt;Idea is to drop classes which are not being confused much so that sub-problem being solved is smaller.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/drop_max.jpg&#34; alt=&#34;drop_max&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;link-https-arxiv-org-abs-1712-07834v2&#34;&gt;&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1712.07834v2&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/h2&gt;
+
+&lt;h3 id=&#34;improving-cnn-performance-with-min-max-objective&#34;&gt;Improving CNN Performance with Min-Max Objective&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: The activation at each layer is visualized to
+be an object manifold (or a space whose shape inherently represent
+something) where each dimension corresponds to objective classes
+to be learned by the network. A cost is proposed that directly
+considers activation map in optimization target.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Optimization tends to minimize compactness of each object manifold(feature variation) and maximize margin between different manifolds.&lt;/li&gt;
+&lt;li&gt;Applying cost to arbitrary layer takes care of all the previous layers in network, due to backpropagation.&lt;/li&gt;
+&lt;li&gt;To make gradient computation tractable, kernel trick is used.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/min_max.jpg&#34; alt=&#34;min_max&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://www.ijcai.org/Proceedings/16/Papers/286.pdf&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;dilated-residual-networks&#34;&gt;Dilated Residual Networks&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: Empirical studies on the effect of output and
+receptive field leads to the conclusion that use of dilated
+convolution filters in the later layer in state-of-art networks
+increase accuracy.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Gridding artifacts due to dilation has been removed by removing max pooling and adding additional layers with decreasing dilation rates and removing residuals in those layers.&lt;/li&gt;
+&lt;li&gt;Architecture for dilated residual network (DRN) is presented based on above consideration and it is shown that increase in accuracy has higher as compared to accuracy that would have resulted by increase in parameter.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/dilated_res.jpg&#34; alt=&#34;dilated_res&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1705.09914&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;interleaved-group-convolutions-for-deep-neural-networks&#34;&gt;Interleaved Group Convolutions for Deep Neural Networks&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: Using two group convolution, an interleaved grouped
+convolution block is created which proves to be wider that normal
+convolution. Wider network helped network represent more and had
+higher accuracy.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Permutations in primary group convolution and secondary convolution each makes block equivalent to normal convolution.&lt;/li&gt;
+&lt;li&gt;Interleaving in secondary group is done such that each group has one filter map from every primary group. After applying pointwise convolution on secondary group, channels are permuted back for input to next interleaved group convolution block.&lt;/li&gt;
+&lt;li&gt;Optimal grouping factor has been derived to maximize width of the block.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/inter_group.jpg&#34; alt=&#34;inter_group&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1707.02725v2&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;incomplete-dot-products-for-dynamic-computation-scaling-in-neural-network-inference&#34;&gt;Incomplete Dot Products for Dynamic Computation Scaling in Neural Network Inference&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: A tunable is provided to adjust how many filters
+to be used during inference dynamically based of computation
+requirements. Filters are arranged from highly important to least
+important (similar to singular values in SVD). Profiles is presented
+by a set of coefficients (hinting how may filters to be used in each
+layer)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Incomplete dot product just does the dot products of filters and input channels as required by the profile.&lt;/li&gt;
+&lt;li&gt;Arrangement of convolution channels and filter from high importance to low importance is possible because of the training procedure followed.&lt;/li&gt;
+&lt;li&gt;All coefficient to one is equivalent to complete dot product.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/incomplete_dot.jpg&#34; alt=&#34;incomplete_dot&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1710.07830v1&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;swgridnet-a-deep-convolutional-neural-network-based-on-grid-topology-for-image-classification&#34;&gt;SwGridNet: A Deep Convolutional Neural Network based on Grid Topology for Image Classification&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: Proposed a grid like structure where output to a
+unit (convolution) is fed by splitting the input from previous
+block and through previous dimensionally neighboring unit. Such
+construction enables architecture to act like ensemble of many
+models as suggested by other simple architecture such as res-net.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Splitting is followed by convolution at grid level which is followed by concatenation from all the unit and input from previous block.&lt;/li&gt;
+&lt;li&gt;Convolution units in a grid can be constructed by varying depth path(which is output feed to deeper neighbor)&lt;/li&gt;
+&lt;li&gt;Number of output channels from each unit can be different from its neighboring units but total input will be equal to the sum of all outputs from neighboring units.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/sw_grid.jpg&#34; alt=&#34;sw_grid&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;link-https-arxiv-org-abs-1709-07646v3&#34;&gt;&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1709.07646v3&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/h2&gt;
+
+&lt;h3 id=&#34;sharesnet-reducing-residual-network-parameter-number-by-sharingweights&#34;&gt;ShaResNet: reducing residual network parameter number by sharingweights&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: Upon observation that in a group of residual
+blocks(same stage) with same dimensionality (where no resolution
+reduction is done), spatial convolution can be shared among those
+residual blocks. By using a shared filters among all the pointwise
+convolution (or non spatial convolution) on a given stage among res
+blocks, computation can be reduced with accuracy loss.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Network is trained normally, end-to-end&lt;/li&gt;
+&lt;li&gt;Gradients are back propagated as usual to pointwise convolution and accumulated for shared weight per stage&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/sha_res.jpg&#34; alt=&#34;sha_res&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1702.08782v2&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;convolutional-networks-with-adaptive-computation-graphs&#34;&gt;Convolutional Networks with Adaptive Computation Graphs&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: Paper proposes a method to adaptively switch off
+block computation (in res-net setting) and allow flow of data to
+net layers. This adaptive switching is based on input or context
+passed as an input. By constraining on number of times a layer
+should be switched off(enforcement during training step), gating
+mechanism adapts itself to switch off gates for certain inputs
+reducing computation complexity. Network is also robust to
+adversarial attacks.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Unlike highway network which is based on soft thresholding, this is hard thresholding. It focuses on utilizing important parts of computation block which have been made efficient to handle certain input.&lt;/li&gt;
+&lt;li&gt;At training step, cost function constrain on number of times a layer should be executed. Soft decision of gating is used during training.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/adaptive.jpg&#34; alt=&#34;adaptive&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1711.11503v1&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;skipnet-learning-dynamic-routing-in-convolutional-networks&#34;&gt;SkipNet: Learning Dynamic Routing in Convolutional Networks&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: It is observed that a complex example needs few
+extra layers of computation to get correctly predicted. So for
+non-complex inputs, some layers can be skipped. Skipping a
+computation block is done through passing previous layer input
+to a gate(composed of RNN, shared by each layer) component. Using
+softmax, gate determines if layer be skipped or not.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Hybrid RL training procedure where supervised training step with softmax gating is used for backpropagation to work. RL is used to minimize the computation reward (less computation is rewarding) along with higher accuracy.&lt;/li&gt;
+&lt;li&gt;LSTM RNN is used and shared among layers to reduce gating overhead.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/skip_net.jpg&#34; alt=&#34;skip_net&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;link-https-arxiv-org-abs-1711-09485v1&#34;&gt;&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1711.09485v1&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/h2&gt;
+
+&lt;h2 id=&#34;papers-from-2016&#34;&gt;Papers from 2016&lt;/h2&gt;
+
+&lt;h3 id=&#34;eie-efficient-inference-engine-on-compressed-deep-neural-network&#34;&gt;EIE: Efficient Inference Engine on Compressed Deep Neural Network&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: To fit whole network model in cache
+so that DRAM access is minimized, models are Compressed
+by involving techniques such as pruning and weight sharing.
+Once model are in cached, computation requires indirect
+access to weights(exploit static sparsity) and activations
+(exploit dynamic sparsity) which costs inefficiency.
+Thus compressed models are expanded.
+EIE develops a hardware design that directly works on
+compressed model using CSC format for inference.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;CSC(compressed sparse column) format employees two vectors. First encodes shared weights and second encodes relative distance in cache memory.&lt;/li&gt;
+&lt;li&gt;This design effectively works on fully connected layers.&lt;/li&gt;
+&lt;li&gt;Hardware design includes description of all logical units and queuing/scheduling algorithms.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/EIE.jpg&#34; alt=&#34;EIE&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1602.01528v2&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;deep-networks-with-stochastic-depth&#34;&gt;Deep Networks with Stochastic Depth&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: Reduction is training time while improving
+the generalization accuracy by randomly shortcutting the inputs
+to next to next layer using identity function (as used in resnet)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Using bernoulli random variable, dropping the layer reduce the train time. At test time, layers are preserved. So, while training, networks are shallower and at inference, they are deeper.&lt;/li&gt;
+&lt;li&gt;Increase in accuracy (as compared to similar static resnet design) is attributed to ensembling nature of many resnets.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/stochastic_depth.jpg&#34; alt=&#34;stochastic_depth&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1603.09382v3&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;perforatedcnns-acceleration-through-elimination-of-redundant-convolutions&#34;&gt;PerforatedCNNs: Acceleration through Elimination of Redundant Convolutions&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: Reduction in convolution computation by extrapolating
+some elements by nearby values. A perforated mask is created
+that describes what part needs to be have convolved value
+and which parts can be extrapolated by nearby value.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Perforation masks are created statically or upon the batch observations through out training. Static masks such as uniformly randomized, grid and pooling structured mask is proposed.&lt;/li&gt;
+&lt;li&gt;Based on training data (statistically), impact mask is proposed that removes least important positions such that extrapolation effects on accuracy for those positions can be minimized.&lt;/li&gt;
+&lt;li&gt;At each iteration, perforation rate at each layer is chosen such that impact on the loss is minimized. This is greedy approach.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/perforation.jpg&#34; alt=&#34;perforation&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1504.08362&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;papers-from-2015-and-older&#34;&gt;Papers from 2015 and older&lt;/h2&gt;
+
+&lt;h3 id=&#34;compressing-neural-networks-with-the-hashing-trick&#34;&gt;Compressing Neural Networks with the Hashing Trick&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: To reduce the model size, weight sharing techniques
+is proposed where instead of storing actual weight, hash key is
+stored and at inference time, hash value is restored from weight
+array.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Hash trick method is used.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/hashed_net.jpg&#34; alt=&#34;hashed_net&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://arxiv.org/abs/1504.04788v1&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;tiled-convolutional-neural-networks&#34;&gt;Tiled convolutional neural networks&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Problem solved: An approach is presented where a weight is
+untied or unshared uptil certain distance of spatial location.
+This can effectively produce invariance to rotation and scaling
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Untying of weights are contrasted with tied weight where same set of parameter extracts features for a pixel location. An untied weight is equivalent to freely choose a different weight for a neighboring pixel.&lt;/li&gt;
+&lt;li&gt;Using a different weight per patch remains valid for certain distance until receptive field for certain feature remains relevant.&lt;/li&gt;
+&lt;li&gt;Unsupervised pre-training is used to initialize the weights before supervised backprop.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/tiled_conv.jpg&#34; alt=&#34;tiled_conv&#34; /&gt;
+&amp;gt;&lt;a href=&#34;https://www-cs.stanford.edu/~jngiam/papers/LeNgiamChenChiaKohNg2010.pdf&#34; target=&#34;_blank&#34;&gt;LINK&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/authors/admin/</link>
+      <pubDate>Wed, 15 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/authors/admin/</guid>
+      <description>&lt;p&gt;Hi, I am a Machine Learning Engineer with 3+ years of experience and my work revolves around defining Machine Learning problems, proposing innovative solutions and building research prototypes. I have developed end-to-end machine learning solutions and platform that runs not on servers but on smart devices demanding absolute precision in terms of accuracy and execution efficiency.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;News Update:&lt;/strong&gt; An article titled &amp;ldquo;&lt;a href=&#34;https://vishal-keshav.github.io/post/regularization/&#34; target=&#34;_blank&#34;&gt;Prior belief and its relationship with regularization&lt;/a&gt;&amp;rdquo; is live!!!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

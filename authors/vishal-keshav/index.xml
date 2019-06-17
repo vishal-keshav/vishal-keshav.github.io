@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vishal Keshav</title>
+    <link>/authors/vishal-keshav/</link>
+    <description>Recent content on Vishal Keshav</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019</copyright>
+    <lastBuildDate>Sat, 01 Sep 2018 00:00:00 +0530</lastBuildDate>
+    
+	    <atom:link href="/authors/vishal-keshav/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Decoupling Semantic Context and Color Correlation</title>
+      <link>/publication/illumination-estimation/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0530</pubDate>
+      
+      <guid>/publication/illumination-estimation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Optimisation of power consumption in wireless network</title>
+      <link>/publication/optimizating-wireless-serving/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0530</pubDate>
+      
+      <guid>/publication/optimizating-wireless-serving/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

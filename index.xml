@@ -1,14 +1,203 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Vishal Keshav on Vishal Keshav</title>
+    <title>Vishal Keshav</title>
     <link>/</link>
-    <description>Recent content in Vishal Keshav on Vishal Keshav</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content on Vishal Keshav</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0530</lastBuildDate>
-    <atom:link href="/" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; 2019</copyright>
+    <lastBuildDate>Wed, 15 May 2019 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Example Page 1</title>
+      <link>/courses/example/example1/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
+      
+      <guid>/courses/example/example1/</guid>
+      <description>
+
+&lt;p&gt;In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
+
+&lt;h2 id=&#34;tip-1&#34;&gt;Tip 1&lt;/h2&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
+
+&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
+
+&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
+
+&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
+
+&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+
+&lt;h2 id=&#34;tip-2&#34;&gt;Tip 2&lt;/h2&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
+
+&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
+
+&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
+
+&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
+
+&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Example Page 2</title>
+      <link>/courses/example/example2/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
+      
+      <guid>/courses/example/example2/</guid>
+      <description>
+
+&lt;p&gt;Here are some more tips for getting started with Academic:&lt;/p&gt;
+
+&lt;h2 id=&#34;tip-3&#34;&gt;Tip 3&lt;/h2&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
+
+&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
+
+&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
+
+&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
+
+&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+
+&lt;h2 id=&#34;tip-4&#34;&gt;Tip 4&lt;/h2&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
+
+&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
+
+&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
+
+&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
+
+&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Prior belief and its relationship with regularization</title>
+      <link>/post/regularization/</link>
+      <pubDate>Wed, 15 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/regularization/</guid>
+      <description>
+
+&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+
+&lt;p&gt;Regularization techniques are a widely explored topic in machine learning that is used for improving generalization accuracy or reducing the overfitting of the data in a machine learning model. Regularization strategies involve either imposing a hard (or explicit) constraint or a soft (or implicit) constraints on the parameters of the model. Ridge regularizer (often referred to as $L2$) and Lasso regularizer (often referred to as $L1$) are some of the explicit regularizers that impose a direct constraint on the parameter. For example, $L1$ constraints the parameters in a space such that most of the parameter values equal to zero. Implicit regularization approach imposes a soft constraint on the parameters by modifying the optimization function. A popular approach called dropout is an example of such implicit regularizer that tunes the values of the parameters by the means of optimization function.&lt;/p&gt;
+
+&lt;p&gt;The goal of this article is neither to list down the regularization techniques commonly used in machine learning nor is to describe when and how the regularizers are being used, but to take a step back and understand the importance of prior (an expression of our belief on the values of the parameters) that is embodied in any regularization approach. Towards this end, we will look into two fundamental approaches of parameter estimation methods namely &amp;ldquo;Maximum Likelihood Estimation (MLE)&amp;rdquo; and &amp;ldquo;Maximum a Posteriori (MAP)&amp;rdquo; and see how the later approach regularizes the model better by using prior knowledge about the estimate. We will start with the first approach, MLE.&lt;/p&gt;
+
+&lt;h1 id=&#34;mle-overfits&#34;&gt;MLE Overfits&lt;/h1&gt;
+
+&lt;p&gt;Any meaningful data has some underlying statistical property. For any data we get, it is reasonable to assume that there exists a data generating distribution that has generated the subset of available data. Our objective is to infer the distribution by analyzing the hidden statistical property in the observed data.&lt;/p&gt;
+
+&lt;p&gt;Let us assume that the available data is given by $D$ where $D$ = $(x_{1},x_{2},&amp;hellip;,x_{n})$ and each $x_{i}$ corresponds to $i^{th}$ data point and $x_{i}$ $\in$ $\mathbb{R}^{d}$. Furthermore, we assume that each data point is being generated independently by a common data generating distribution denoted by $P(X/\theta)$ or in other words, each data point $x_{i}$ is sampled from a random variable $X_{i}$ $\sim$  $P$.&lt;/p&gt;
+
+&lt;p&gt;We intend to estimate the true parameter $\theta$ of the assumed data distribution. MLE approaches this problem by maximizing the likelihood function $P(data/\theta)$, or more formally
+$$
+\begin{equation}
+\theta_{MLE} = \operatorname*{arg\,max}_\theta P(X_{1}=x_{1},X_{2}=x_{2},&amp;hellip;,X_{n}=x_{n}/\theta)
+\end{equation}
+$$&lt;/p&gt;
+
+&lt;p&gt;Since it is assumed that the data distribution are identical and independent, by using the conditional independence rule (conditioned on $\theta$) on the joint probability distribution (over $X_{i}$), we get
+$$
+\begin{equation}
+\theta_{MLE} = \operatorname*{arg\,max}_\theta \prod_{i=1}^{n}P(X_{i}/\theta)
+\end{equation}
+$$&lt;/p&gt;
+
+&lt;p&gt;Taking a concrete example of data distribution, we can derive the maximum likelihood estimate. Lets suppose that data follows a Gaussian distribution (which is a reasonable assumption for scalar data points), and the parameters we are interested in is the mean (denoted by $\mu$) where we keep the variance (denoted by $\sigma^{2}$) a constant, i.e. $X_{i}$ $\sim$ $\mathcal{N}(\mu , \sigma^{2})$.
+Here, the only parameter we want to estimate is the $\theta = \mu$.&lt;/p&gt;
+
+&lt;p&gt;Following the Gaussian density function for the given data distribution and the Independent and identically distributed (IID) assumptions, from previous equation we get
+$$
+\begin{equation}
+\theta_{MLE} = \operatorname*{arg\,max}_\theta \left ( \frac{1}{\sqrt{2\pi\sigma^{{2}}}} \right ) exp\left ( -\frac{1}{2\sigma^{2}}\sum_{i=1}^{n}(x_{i} - \mu)^2 \right )
+\end{equation}
+$$&lt;/p&gt;
+
+&lt;p&gt;Since the logarithm is a monotonically increasing function, we can maximize $\log$ of the right side expression and equivalently get the parameter of interest.&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{align}
+\theta_{MLE} &amp;amp; = \operatorname*{arg\,max}_\theta \log P(data/\theta) \\&lt;br /&gt;
+&amp;amp; = \operatorname*{arg\,max}_\theta -\frac{n}{2}\log(2\pi\sigma^2) - \frac{1}{2\sigma^2}\sum_{i=1}^{n}(x_{i} - \mu)
+\end{align}
+$$&lt;/p&gt;
+
+&lt;p&gt;fetches us $\mu$ = $\frac{\sum_{i=1}^{n}x_{i}}{n}$ which is the sample mean. Here we can see that if the dataset is small, the MLE estimate memorizes both the signal and the noise from the data even if we may have some idea of where the parameter should lie.&lt;/p&gt;
+
+&lt;p&gt;An apt representation of this is idea is shown in the figure below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;res/figure.png&#34; alt=&#34;figure&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;When the number of parameter increases and the number of data point remains small, the MLE estimates a complicated function that more often tries to fit the noise present in the data and diverges from the actual data distribution. In the next section, we will see how the MAP estimate overcome this drawback by introducing something called &amp;ldquo;prior&amp;rdquo;.&lt;/p&gt;
+
+&lt;h1 id=&#34;map-regularizes&#34;&gt;MAP Regularizes&lt;/h1&gt;
+
+&lt;p&gt;Our problem statement remains the same as that of MLE, but our assumptions about the underlying statistical properties of the data is a bit different. We now assume that we have a full knowledge about the joint distribution of data and the underlying data distribution&amp;rsquo;s parameter, as denoted by $P(X_{1}, X_{2},&amp;hellip;,X_{n},\theta)$. Here, we note that the $\theta$ is now a random variable. Although $\theta$ is a random variable now, MAP estimates are the point estimates that evaluate the parameter that maximizes a certain condition, in this case it is the posterior distribution of $\theta$ given the data. Formally,&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{align}
+\theta_{MAP} &amp;amp; = \operatorname*{arg\,max}_\theta P(\theta/X_{1},X_{2},&amp;hellip;,X_{n})\\&lt;br /&gt;
+&amp;amp; = \operatorname*{arg\,max}_\theta \frac{P(X_{1}, X_{2},&amp;hellip;,X_{n},\theta)}{P(X_{1}, X_{2},&amp;hellip;,X_{n})}\\&lt;br /&gt;
+&amp;amp; = \operatorname*{arg\,max}_\theta P(X_{1}, X_{2},&amp;hellip;,X_{n}/\theta)*P(\theta)
+\end{align}
+$$&lt;/p&gt;
+
+&lt;p&gt;using proportionality and Bayes theorem.
+Taking log and using IID assumption on right-hand side of the expression, we get
+$$
+\begin{equation}
+\theta_{MAP} = \operatorname*{arg\,max}_\theta \sum_{i=1}^{n}\log P(X_{i} = x_{i}/\theta) + \log P(\theta)
+\end{equation}
+$$&lt;/p&gt;
+
+&lt;p&gt;We again take a concrete example by assuming a joint distribution of data and parameter. Alternatively, we assume that the conditional data distribution conditioned on parameter $\mu$ follows $\mathcal{N}(\mu, \sigma^{2})$ where $\theta = \mu$, $\sigma$ is kept as a constant and the parameter $\mu$ is distributed normally with mean $\mu^{*}$ and a variance of 1 i.e. $\mu$ = $\theta$ $\sim$ $\mathcal{N}(\mu^{*}, 1)$. Under these univariate Gaussian assumptions for data and parameter, we can maximize the logarithm of the posterior to estimate the point estimate for $\theta$.
+$$
+\begin{align}
+\theta_{MAP} = \operatorname*{arg\,max}_\theta &amp;amp; \left ( \frac{1}{\sqrt{2\pi\sigma^{{2}}}} \right ) exp\left ( -\frac{1}{2\sigma^{2}}\sum_{i=1}^{n}(x_{i} - \mu)^2 \right ) + \\\ &amp;amp; \left ( \frac{1}{\sqrt{2\pi}} \right ) exp\left ( -\frac{1}{2}(\mu - \mu^{*})^2 \right )
+\end{align}
+$$&lt;/p&gt;
+
+&lt;p&gt;Differentiating the right-hand side and equating it to zero, the expression evaluates to
+$$
+\begin{equation}
+\frac{1}{\sigma^{2}}\left ( \sum_{i=1}^{n}(x_{i}-n\mu)^{2} \right ) + (\mu^{*} - \mu) = 0
+\end{equation}
+$$
+Rearranging the $\mu$ on one side, we get
+$\mu = \frac{\sum_{i=1}^{n}x_{i}}{\sigma^2 + n} + \frac{\sigma^{2}}{\sigma^{2}+n}\mu^{*}$
+Since, $\overline{x} = \frac{\sum_{i=1}^{n}x_{i}}{n}$ is the sample mean, we can write the above equation as
+$$
+\begin{equation}
+\theta_{MLE} = \frac{n}{\sigma^2 + n}\overline{x} + \frac{\sigma^{2}}{\sigma^{2}+n}\mu^{*}
+\end{equation}
+$$
+From the above expression, we can see that the $\theta_{MLE}$ is a convex combination of sample mean $\overline{x}$ and the prior mean $\mu^{*}$. The prior mean $\mu^{*}$ reflects our prior belief about where the mean should be before we observe any data. When the number of data points are less, more weightage is given on the prior mean which helps in achieving regularization through reducing the data overfitting. In an extream case where $n \rightarrow \infty$, $\frac{n}{\sigma^2 + n} \rightarrow 1$ and $\frac{\sigma^{2}}{\sigma^{2}+n} \rightarrow 0 $, the parameter estimation is dominated by sample mean (which will reasonably estimate the actual parameter of the data distribution). When the number of data points are sufficient, the parameter estimate is well guided by the observed data, otherwise we partially rely on our prior knowledge of what value a parameter should assume.&lt;/p&gt;
+
+&lt;p&gt;Refer the figure below for an intuitive understanding.
+&lt;img src=&#34;res/figure2.png&#34; alt=&#34;figure2&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;summary&#34;&gt;Summary&lt;/h1&gt;
+
+&lt;p&gt;In this article, we explored two fundamental parameter estimation algorithm namely Maximum Likelihood Estimation and Maximum a Posteriori. By taking concrete examples of the distribution (along with several reasonable assumptions), we argued that MAP estimates induce regularization through prior over the parameters.&lt;/p&gt;
+
+&lt;p&gt;In a traditional Bayesian setup, a prior is explicitly modeled, but in a deep learning setting, this may take several forms. Whatever be the case, prior knowledge induces better inductive bias and this can be achieved through designing the architecture, curating of the training data and the choice of the optimization procedure. A more direct approach of imposing the prior for regularizing a model can be seen in the process of distillation. A teacher network is trained without any prior data, and when it is trained, the knowledge (in terms of prior) is distilled in the student network. Formulating a better and more explicit approach to induce prior in deep learning systems is an active area of research which we will explore further in subsequent articles.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Fast Prototype</title>
@@ -65,23 +254,12 @@
     </item>
     
     <item>
-      <title>Review of Computer Vision Architecture</title>
-      <link>/post/review-dnn/</link>
-      <pubDate>Thu, 20 Sep 2018 00:00:00 +0530</pubDate>
+      <title>A review of Computer Vision Architecture</title>
+      <link>/post/review-cv/</link>
+      <pubDate>Thu, 20 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/review-dnn/</guid>
+      <guid>/post/review-cv/</guid>
       <description>
-
-&lt;p&gt;&lt;img src=&#34;res/cover.jpg&#34; alt=&#34;Cover&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;papers-from-2018&#34;&gt;Papers from 2018&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;Updating soon...
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;papers-from-2017&#34;&gt;Papers from 2017&lt;/h2&gt;
 
 &lt;h3 id=&#34;more-is-less-a-more-complicated-network-with-less-inference-complexity&#34;&gt;More is Less: A More Complicated Network with Less Inference Complexity&lt;/h3&gt;
 
@@ -800,26 +978,6 @@ This can effectively produce invariance to rotation and scaling
     </item>
     
     <item>
-      <title>Example Page</title>
-      <link>/tutorial/example/</link>
-      <pubDate>Sun, 09 Sep 2018 00:00:00 +0530</pubDate>
-      
-      <guid>/tutorial/example/</guid>
-      <description>
-
-&lt;p&gt;In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
-
-&lt;h2 id=&#34;tip-1&#34;&gt;Tip 1&lt;/h2&gt;
-
-&lt;p&gt;&amp;hellip;&lt;/p&gt;
-
-&lt;h2 id=&#34;tip-2&#34;&gt;Tip 2&lt;/h2&gt;
-
-&lt;p&gt;&amp;hellip;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Decoupling Semantic Context and Color Correlation</title>
       <link>/publication/illumination-estimation/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0530</pubDate>
@@ -840,221 +998,14 @@ This can effectively produce invariance to rotation and scaling
     <item>
       <title>Xcelerator: Neural Architecture Search</title>
       <link>/project/xcelerator/</link>
-      <pubDate>Sun, 19 Aug 2018 00:00:00 +0530</pubDate>
+      <pubDate>Sun, 19 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>/project/xcelerator/</guid>
       <description>&lt;p&gt;Machine learning has become ubiquitous and is now realized in almost every application. This has burdened the machine learning model developers to make necessary modification in the algorithm to select best available architecture such that performance and power needs can be satisfied post-deployment of the application to smart devices such as smartphones and wearables.&lt;/p&gt;
 
 &lt;p&gt;For most of the part, a developer tunes the model by changing several hyper-parameters. However, any choice of such hyper-parameters comes either by experience and deep insight, or certain guidelines as provided by the architecture developers (based on ablation studies).&lt;/p&gt;
 
-&lt;p&gt;We propose to develop a meta-learning algorithm that takes a specified model architecture and tunes it to match the performance requirement on a particular smart-device. More specifically, we propose to build a policy that iteratively removes weights, channels, and layers in a vision-based model to improve upon execution efficiency while maintaining the prediction accuracy. We show that once the policy is constructed on a particular platform, the domain knowledge can be transferred to construct a policy for a different platform.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Example Talk</title>
-      <link>/talk/example/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0530</pubDate>
-      
-      <guid>/talk/example/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;p&gt;Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.&lt;/p&gt;
-
-&lt;/div&gt;
-
-
-&lt;p&gt;Slides can be added in a few ways:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Create&lt;/strong&gt; slides using Academic&amp;rsquo;s &lt;em&gt;Slides&lt;/em&gt; feature and link using &lt;code&gt;url_slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Upload&lt;/strong&gt; an existing slide deck to &lt;code&gt;static/&lt;/code&gt; and link using &lt;code&gt;url_slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Embed&lt;/strong&gt; your slides (e.g. Google Slides) or presentation video on this page using &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;shortcodes&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Further talk details can easily be added to this page using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Slides</title>
-      <link>/slides/example-slides/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/slides/example-slides/</guid>
-      <description>
-
-&lt;h1 id=&#34;welcome-to-slides&#34;&gt;Welcome to Slides&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/&#34; target=&#34;_blank&#34;&gt;Academic&lt;/a&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Efficiently write slides in Markdown&lt;/li&gt;
-&lt;li&gt;3-in-1: Create, Present, and Publish your slides&lt;/li&gt;
-&lt;li&gt;Supports speaker notes&lt;/li&gt;
-&lt;li&gt;Mobile friendly slides&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;controls&#34;&gt;Controls&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Next: &lt;code&gt;Right Arrow&lt;/code&gt; or &lt;code&gt;Space&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Previous: &lt;code&gt;Left Arrow&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Start: &lt;code&gt;Home&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Finish: &lt;code&gt;End&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Overview: &lt;code&gt;Esc&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Speaker notes: &lt;code&gt;S&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Fullscreen: &lt;code&gt;F&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Zoom: &lt;code&gt;Alt + Click&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/hakimel/reveal.js#pdf-export&#34; target=&#34;_blank&#34;&gt;PDF Export&lt;/a&gt;: &lt;code&gt;E&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;code-highlighting&#34;&gt;Code Highlighting&lt;/h2&gt;
-
-&lt;p&gt;Inline code: &lt;code&gt;variable&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Code block:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;porridge = &amp;quot;blueberry&amp;quot;
-if porridge == &amp;quot;blueberry&amp;quot;:
-    print(&amp;quot;Eating...&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;math&#34;&gt;Math&lt;/h2&gt;
-
-&lt;p&gt;In-line math: $x + y = z$&lt;/p&gt;
-
-&lt;p&gt;Block math:&lt;/p&gt;
-
-&lt;p&gt;$$
-f\left( x \right) = \;\frac{{2\left( {x + 4} \right)\left( {x - 4} \right)}}{{\left( {x + 4} \right)\left( {x + 1} \right)}}
-$$&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;fragments&#34;&gt;Fragments&lt;/h2&gt;
-
-&lt;p&gt;Make content appear incrementally&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;{{% fragment %}} One {{% /fragment %}}
-{{% fragment %}} **Two** {{% /fragment %}}
-{{% fragment %}} Three {{% /fragment %}}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Press &lt;code&gt;Space&lt;/code&gt; to play!&lt;/p&gt;
-
-&lt;p&gt;&lt;span class=&#34;fragment &#34; &gt;
-  One
-&lt;/span&gt;
-&lt;span class=&#34;fragment &#34; &gt;
-  &lt;strong&gt;Two&lt;/strong&gt;
-&lt;/span&gt;
-&lt;span class=&#34;fragment &#34; &gt;
-  Three
-&lt;/span&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;A fragment can accept two optional parameters:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;class&lt;/code&gt;: use a custom style (requires definition in custom CSS)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;weight&lt;/code&gt;: sets the order in which a fragment appears&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;speaker-notes&#34;&gt;Speaker Notes&lt;/h2&gt;
-
-&lt;p&gt;Add speaker notes to your presentation&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{% speaker_note %}}
-- Only the speaker can read these notes
-- Press `S` key to view
-{{% /speaker_note %}}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Press the &lt;code&gt;S&lt;/code&gt; key to view the speaker notes!&lt;/p&gt;
-
-&lt;aside class=&#34;notes&#34;&gt;
-  &lt;ul&gt;
-&lt;li&gt;Only the speaker can read these notes&lt;/li&gt;
-&lt;li&gt;Press &lt;code&gt;S&lt;/code&gt; key to view&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/aside&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;themes&#34;&gt;Themes&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;black: Black background, white text, blue links (default)&lt;/li&gt;
-&lt;li&gt;white: White background, black text, blue links&lt;/li&gt;
-&lt;li&gt;league: Gray background, white text, blue links&lt;/li&gt;
-&lt;li&gt;beige: Beige background, dark text, brown links&lt;/li&gt;
-&lt;li&gt;sky: Blue background, thin dark text, blue links&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;ul&gt;
-&lt;li&gt;night: Black background, thick white text, orange links&lt;/li&gt;
-&lt;li&gt;serif: Cappuccino background, gray text, brown links&lt;/li&gt;
-&lt;li&gt;simple: White background, black text, blue links&lt;/li&gt;
-&lt;li&gt;solarized: Cream-colored background, dark green text, blue links&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-
-&lt;section data-noprocess data-shortcode-slide
-  
-      
-      data-background-image=&#34;/img/boards.jpg&#34;
-  &gt;
-
-
-&lt;h2 id=&#34;custom-slide&#34;&gt;Custom Slide&lt;/h2&gt;
-
-&lt;p&gt;Customize the slide style and background&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{&amp;lt; slide background-image=&amp;quot;/img/boards.jpg&amp;quot; &amp;gt;}}
-{{&amp;lt; slide background-color=&amp;quot;#0000FF&amp;quot; &amp;gt;}}
-{{&amp;lt; slide class=&amp;quot;my-style&amp;quot; &amp;gt;}}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;custom-css-example&#34;&gt;Custom CSS Example&lt;/h2&gt;
-
-&lt;p&gt;Let&amp;rsquo;s make headers navy colored.&lt;/p&gt;
-
-&lt;p&gt;Create &lt;code&gt;assets/css/reveal_custom.css&lt;/code&gt; with:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.reveal section h1,
-.reveal section h2,
-.reveal section h3 {
-  color: navy;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&#34;questions&#34;&gt;Questions?&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://discourse.gohugo.io&#34; target=&#34;_blank&#34;&gt;Ask&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In this project, we propose to develop a meta-learning algorithm that takes a specified model architecture and tunes it to match the performance requirement on a particular smart-device. More specifically, we propose to build a policy that iteratively removes weights, channels, and layers in a vision-based model to improve upon execution efficiency while maintaining the prediction accuracy. We show that once the policy is constructed on a particular platform, the domain knowledge can be transferred to construct a policy for a different platform.&lt;/p&gt;
 </description>
     </item>
     

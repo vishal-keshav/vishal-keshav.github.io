@@ -4,29 +4,20 @@
     <title>Tags on Vishal Keshav</title>
     <link>/tags/</link>
     <description>Recent content in Tags on Vishal Keshav</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Thu, 27 Sep 2018 00:00:00 +0530</lastBuildDate>
+    <copyright>&amp;copy; 2019</copyright>
+    <lastBuildDate>Wed, 15 May 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>CodeOn</title>
-      <link>/tags/codeon/</link>
-      <pubDate>Thu, 27 Sep 2018 00:00:00 +0530</pubDate>
-      
-      <guid>/tags/codeon/</guid>
-      <description></description>
-    </item>
     
     <item>
-      <title>DNN review</title>
-      <link>/tags/dnn-review/</link>
-      <pubDate>Thu, 20 Sep 2018 00:00:00 +0530</pubDate>
+      <title>Academic</title>
+      <link>/tags/academic/</link>
+      <pubDate>Wed, 15 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/dnn-review/</guid>
+      <guid>/tags/academic/</guid>
       <description></description>
     </item>
     
@@ -40,11 +31,11 @@
     </item>
     
     <item>
-      <title>Machine-Learning</title>
-      <link>/tags/machine-learning/</link>
-      <pubDate>Sun, 19 Aug 2018 00:00:00 +0530</pubDate>
+      <title>CodeOn</title>
+      <link>/tags/codeon/</link>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 +0530</pubDate>
       
-      <guid>/tags/machine-learning/</guid>
+      <guid>/tags/codeon/</guid>
       <description></description>
     </item>
     
