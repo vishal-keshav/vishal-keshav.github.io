@@ -85,7 +85,7 @@
     </item>
     
     <item>
-      <title>Prior belief and its relationship with regularization</title>
+      <title>Priors and the relationship with regularization</title>
       <link>/post/regularization/</link>
       <pubDate>Wed, 15 May 2019 00:00:00 +0000</pubDate>
       
@@ -183,7 +183,7 @@ $\mu = \frac{\sum_{i=1}^{n}x_{i}}{\sigma^2 + n} + \frac{\sigma^{2}}{\sigma^{2}+n
 Since, $\overline{x} = \frac{\sum_{i=1}^{n}x_{i}}{n}$ is the sample mean, we can write the above equation as
 $$
 \begin{equation}
-\theta_{MLE} = \frac{n}{\sigma^2 + n}\overline{x} + \frac{\sigma^{2}}{\sigma^{2}+n}\mu^{*}
+\theta_{MAP} = \frac{n}{\sigma^2 + n}\overline{x} + \frac{\sigma^{2}}{\sigma^{2}+n}\mu^{*}
 \end{equation}
 $$
 From the above expression, we can see that the $\theta_{MLE}$ is a convex combination of sample mean $\overline{x}$ and the prior mean $\mu^{*}$. The prior mean $\mu^{*}$ reflects our prior belief about where the mean should be before we observe any data. When the number of data points are less, more weightage is given on the prior mean which helps in achieving regularization through reducing the data overfitting. In an extream case where $n \rightarrow \infty$, $\frac{n}{\sigma^2 + n} \rightarrow 1$ and $\frac{\sigma^{2}}{\sigma^{2}+n} \rightarrow 0 $, the parameter estimation is dominated by sample mean (which will reasonably estimate the actual parameter of the data distribution). When the number of data points are sufficient, the parameter estimate is well guided by the observed data, otherwise we partially rely on our prior knowledge of what value a parameter should assume.&lt;/p&gt;
@@ -195,7 +195,7 @@ From the above expression, we can see that the $\theta_{MLE}$ is a convex combin
 
 &lt;p&gt;In this article, we explored two fundamental parameter estimation algorithm namely Maximum Likelihood Estimation and Maximum a Posteriori. By taking concrete examples of the distribution (along with several reasonable assumptions), we argued that MAP estimates induce regularization through prior over the parameters.&lt;/p&gt;
 
-&lt;p&gt;In a traditional Bayesian setup, a prior is explicitly modeled, but in a deep learning setting, this may take several forms. Whatever be the case, prior knowledge induces better inductive bias and this can be achieved through designing the architecture, curating of the training data and the choice of the optimization procedure. A more direct approach of imposing the prior for regularizing a model can be seen in the process of distillation. A teacher network is trained without any prior data, and when it is trained, the knowledge (in terms of prior) is distilled in the student network. Formulating a better and more explicit approach to induce prior in deep learning systems is an active area of research which we will explore further in subsequent articles.&lt;/p&gt;
+&lt;p&gt;In a traditional Bayesian setup, a prior is explicitly modeled, but in a deep learning setting, this may take several forms. Whatever be the case, prior knowledge induces better inductive bias and this can be achieved through designing the architecture, curating of the training data and the choosing a better optimization objective. A more direct approach of imposing the prior for regularizing a model can be seen in the process of distillation. A teacher network is trained without any prior data, and when it is trained, the knowledge (in terms of prior) is distilled in the student network. Formulating a better and more explicit approach to induce prior in deep learning systems is an active area of research which we will explore further in subsequent articles.&lt;/p&gt;
 </description>
     </item>
     
