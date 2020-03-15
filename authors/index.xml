@@ -1,34 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Authors on Vishal Keshav</title>
+    <title>Authors | Vishal Keshav</title>
     <link>/authors/</link>
-    <description>Recent content in Authors on Vishal Keshav</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2019</copyright>
-    <lastBuildDate>Wed, 15 May 2019 00:00:00 +0000</lastBuildDate>
-    
-	    <atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
+    <description>Authors</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 15 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Authors</title>
+      <link>/authors/</link>
+    </image>
     
     <item>
       <title></title>
       <link>/authors/admin/</link>
-      <pubDate>Wed, 15 May 2019 00:00:00 +0000</pubDate>
-      
+      <pubDate>Sun, 15 Mar 2020 00:00:00 +0000</pubDate>
       <guid>/authors/admin/</guid>
-      <description>&lt;p&gt;Hi, I am a Machine Learning Engineer with 3+ years of experience and my work revolves around defining Machine Learning problems, proposing innovative solutions and building research prototypes. I have developed end-to-end machine learning solutions and platform that runs not on servers but on smart devices demanding absolute precision in terms of accuracy and execution efficiency.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;News Update:&lt;/strong&gt; An article titled &amp;ldquo;&lt;a href=&#34;https://vishal-keshav.github.io/post/regularization/&#34; target=&#34;_blank&#34;&gt;Prior belief and its relationship with regularization&lt;/a&gt;&amp;rdquo; is live!!!&lt;/p&gt;
+      <description>&lt;p&gt;I am a graduate student in the computer science department at UMass Amherst. My research interests lie at the intersection of machine learning, deep learning, and systems for machine learning.&lt;/p&gt;
+&lt;p&gt;Before I was a graduate student, I worked at Samsung Research Institute Bengaluru as a Machine Learning Engineer. I received my bachelor’s degree in Mathematics and Computing from the Indian Institute of Technology, Guwahati.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;New Post&lt;/strong&gt;: Navigate to my blog post.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Vishal Keshav</title>
       <link>/authors/vishal-keshav/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0530</pubDate>
-      
+      <pubDate>Wed, 01 Jan 2020 00:00:00 -0500</pubDate>
       <guid>/authors/vishal-keshav/</guid>
       <description></description>
     </item>

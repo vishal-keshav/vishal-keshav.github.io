@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software Engineering | Vishal Keshav</title>
+    <link>/tags/software-engineering/</link>
+      <atom:link href="/tags/software-engineering/index.xml" rel="self" type="application/rss+xml" />
+    <description>Software Engineering</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 15 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Software Engineering</title>
+      <link>/tags/software-engineering/</link>
+    </image>
+    
+    <item>
+      <title>Python is a funny language!</title>
+      <link>/post/python-variables/</link>
+      <pubDate>Sun, 15 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>/post/python-variables/</guid>
+      <description>&lt;h1 id=&#34;solve-this-first&#34;&gt;Solve this first&lt;/h1&gt;
+&lt;p&gt;Let me start by asking what would be the output for the below python code.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;l = [[]]*2
+print(l)
+for i in range(2):
+    for j in range(3):
+        l[i].append(0)
+print(l)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you said the output is&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[[],[]]
+[[0,0,0],[0,0,0]]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;then read on.
+In this post, I am going pictorially outline how python treats its variables, which will eventually explain the correct output we would get from the above program.&lt;/p&gt;
+&lt;h1 id=&#34;objects-objects-everywhere&#34;&gt;Objects objects, everywhere!&lt;/h1&gt;
+&lt;p&gt;In python, everything is an object (having some attributes and functionality). Even an integer is an object (where the value attribute is the value we assign to an integer). When we declare a variable &lt;code&gt;var1 = 47&lt;/code&gt;, we are creating an integer type object somewhere in the memory having a value of 47, and &lt;code&gt;var1&lt;/code&gt; is just pointing to that object.
+Now, consider another object pointer &lt;code&gt;var2 = [47]&lt;/code&gt;. This will create an object of type list somewhere in the memory and &lt;code&gt;var2&lt;/code&gt; will point to that object.&lt;/p&gt;
+&lt;p&gt;Pictorially, this will look something like this
+&lt;img src=&#34;res/fig1.png&#34; alt=&#34;fig1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Now let&amp;rsquo;s see what happens when we modify those two variables.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var1 = var1+1
+var2[0] = var2[0]+1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This modification resulted to &lt;code&gt;var1 = 48&lt;/code&gt; and &lt;code&gt;var2 = [48]&lt;/code&gt;. All these are consistent with what we think should happen, but under the hood, this is what happened.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;res/fig2.png&#34; alt=&#34;fig2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The object that &lt;code&gt;var1&lt;/code&gt; was pointing to, got destroyed and a new object was created, whereas &lt;code&gt;var2&lt;/code&gt; object remained as it is, only the object at its index 0 got replaced by another int object. So, what going on?&lt;/p&gt;
+&lt;h1 id=&#34;to-change-or-not-to-change-that-is-the-question&#34;&gt;To change or not to change, that is the question&lt;/h1&gt;
+&lt;p&gt;It turns out that in python, not all objects have the same characteristics. Some can change (list, sets, dictionary are mutable) and some cannot (int, float, tuple are immutable). The immutability does not allow changing the value attribute of the int object (through re-assignment). Instead, upon re-assignment, the original int object reference count gets decremented and the garbage collector ends up destroying the object. The list object, however, mutates and lets the change happen on its 0th index.&lt;/p&gt;
+&lt;h1 id=&#34;back-to-the-point&#34;&gt;Back to the point&lt;/h1&gt;
+&lt;p&gt;When we declared &lt;code&gt;var = [[]]*2&lt;/code&gt;, it ends up creating a mutable list object, and then creates another mutable object (again, of type list), placing it twice at index 0 and index 1 of the first list.&lt;/p&gt;
+&lt;p&gt;We can verify this programatically by printing the identity (sort of memory location) for all the objects.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;print(id(l))
+print(id(l[0]))
+print(id(l[1]))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;On my computer, I got these outputs&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;140110921293312
+140110922225216
+140110922225216
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This tells us that we end up creating only two objects of type list.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;res/fig3.png&#34; alt=&#34;fig3&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    for j in range(3):
+        l[i].append(0)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the above code snippet, the object at location 128 has been referenced twice such that 0 is appended thrice each time. As a result, we get the following output:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[[0,0,0,0,0,0], [0,0,0,0,0,0]]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So, finally, how would we get the expected output &lt;code&gt;[[0,0,0],[0,0,0]]&lt;/code&gt;?
+We need to declare the list object thrice. Below code snippet achives that.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;l = [[],[]]
+print(l)
+for i in range(2):
+    for j in range(3):
+        l[i].append(0)
+print(l)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;We saw how python treats its variables and what do the variables mean to python language (they are just pointer to objects). This basic understanding sets us to understand the pass-by-value and pass-by-reference paradigm and how python is different in that respect. In the future article, I will explore more on this topic.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

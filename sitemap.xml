@@ -1,41 +1,79 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/courses/example/example1/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/courses/example/</loc>
-    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/courses/example/example2/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/authors/admin/</loc>
-    <lastmod>2019-05-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/academic/</loc>
-    <lastmod>2019-05-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2020-03-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/authors/</loc>
-    <lastmod>2019-05-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2020-03-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/post/</loc>
+    <lastmod>2020-03-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/python-variables/</loc>
+    <lastmod>2020-03-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/software-engineering/</loc>
+    <lastmod>2020-03-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-03-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-03-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication_types/3/</loc>
+    <lastmod>2020-01-01T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/</loc>
+    <lastmod>2020-01-01T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication_types/</loc>
+    <lastmod>2020-01-01T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/curriculum-learning/</loc>
+    <lastmod>2020-01-01T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/vishal-keshav/</loc>
+    <lastmod>2020-01-01T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication_types/8/</loc>
+    <lastmod>2019-09-01T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/patent-dnn-based-imaging/</loc>
+    <lastmod>2019-09-01T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/academic/</loc>
     <lastmod>2019-05-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -45,63 +83,58 @@
   </url>
   
   <url>
-    <loc>/tags/</loc>
-    <lastmod>2019-05-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>/publication_types/1/</loc>
+    <lastmod>2019-03-01T00:00:00-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2019-05-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>/publication/illumination-estimation/</loc>
+    <lastmod>2019-03-01T00:00:00-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/project/fast-prototype/</loc>
-    <lastmod>2019-01-27T00:00:00+05:30</lastmod>
+    <loc>/extras/</loc>
+    <lastmod>2019-01-27T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/extras/fast-prototype/</loc>
+    <lastmod>2019-01-27T00:00:00-05:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/machine-learning/</loc>
-    <lastmod>2019-01-27T00:00:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/project/</loc>
-    <lastmod>2019-01-27T00:00:00+05:30</lastmod>
-    <priority>0</priority>
+    <lastmod>2019-01-27T00:00:00-05:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/codeon/</loc>
-    <lastmod>2018-09-27T00:00:00+05:30</lastmod>
-    <priority>0</priority>
+    <lastmod>2018-09-27T00:00:00-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/project/interpreter/</loc>
-    <lastmod>2018-09-27T00:00:00+05:30</lastmod>
+    <loc>/extras/interpreter/</loc>
+    <lastmod>2018-09-27T00:00:00-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/project/parallel-matrix-multiplication/</loc>
-    <lastmod>2018-09-27T00:00:00+05:30</lastmod>
+    <loc>/extras/parallel-matrix-multiplication/</loc>
+    <lastmod>2018-09-27T00:00:00-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/project/py-game/</loc>
-    <lastmod>2018-09-27T00:00:00+05:30</lastmod>
+    <loc>/extras/py-game/</loc>
+    <lastmod>2018-09-27T00:00:00-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/project/tiny-ml-framework/</loc>
-    <lastmod>2018-09-27T00:00:00+05:30</lastmod>
+    <loc>/extras/tiny-ml-framework/</loc>
+    <lastmod>2018-09-27T00:00:00-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/project/uva/</loc>
-    <lastmod>2018-09-27T00:00:00+05:30</lastmod>
+    <loc>/extras/uva/</loc>
+    <lastmod>2018-09-27T00:00:00-04:00</lastmod>
   </url>
   
   <url>
@@ -110,56 +143,32 @@
   </url>
   
   <url>
-    <loc>/publication_types/1/</loc>
-    <lastmod>2018-09-01T00:00:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/publication_types/3/</loc>
-    <lastmod>2018-09-01T00:00:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/publication/illumination-estimation/</loc>
-    <lastmod>2018-09-01T00:00:00+05:30</lastmod>
+    <loc>/publication_types/4/</loc>
+    <lastmod>2018-09-01T00:00:00-04:00</lastmod>
   </url>
   
   <url>
     <loc>/publication/optimizating-wireless-serving/</loc>
-    <lastmod>2018-09-01T00:00:00+05:30</lastmod>
+    <lastmod>2018-09-01T00:00:00-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/publication_types/</loc>
-    <lastmod>2018-09-01T00:00:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/publication/</loc>
-    <lastmod>2018-09-01T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/vishal-keshav/</loc>
-    <lastmod>2018-09-01T00:00:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/project/xcelerator/</loc>
+    <loc>/extras/xcelerator/</loc>
     <lastmod>2018-08-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/</loc>
-    <priority>0</priority>
+    <loc>/publication/patent-contextual-task-scheduling/</loc>
+    <lastmod>2017-10-01T00:00:00-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/courses/</loc>
+    <loc>/publication/patent-task-execution/</loc>
+    <lastmod>2016-10-01T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
   </url>
   
 </urlset>

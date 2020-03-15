@@ -1,41 +1,38 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>CodeOn on Vishal Keshav</title>
+    <title>CodeOn | Vishal Keshav</title>
     <link>/tags/codeon/</link>
-    <description>Recent content in CodeOn on Vishal Keshav</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2019</copyright>
-    <lastBuildDate>Thu, 27 Sep 2018 00:00:00 +0530</lastBuildDate>
-    
-	    <atom:link href="/tags/codeon/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/tags/codeon/index.xml" rel="self" type="application/rss+xml" />
+    <description>CodeOn</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 27 Sep 2018 00:00:00 -0400</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>CodeOn</title>
+      <link>/tags/codeon/</link>
+    </image>
     
     <item>
       <title>Interpreter</title>
-      <link>/project/interpreter/</link>
-      <pubDate>Thu, 27 Sep 2018 00:00:00 +0530</pubDate>
-      
-      <guid>/project/interpreter/</guid>
+      <link>/extras/interpreter/</link>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 -0400</pubDate>
+      <guid>/extras/interpreter/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Matrix-matrix multiplication</title>
-      <link>/project/parallel-matrix-multiplication/</link>
-      <pubDate>Thu, 27 Sep 2018 00:00:00 +0530</pubDate>
-      
-      <guid>/project/parallel-matrix-multiplication/</guid>
+      <link>/extras/parallel-matrix-multiplication/</link>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 -0400</pubDate>
+      <guid>/extras/parallel-matrix-multiplication/</guid>
       <description></description>
     </item>
     
     <item>
       <title>UVa</title>
-      <link>/project/uva/</link>
-      <pubDate>Thu, 27 Sep 2018 00:00:00 +0530</pubDate>
-      
-      <guid>/project/uva/</guid>
+      <link>/extras/uva/</link>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 -0400</pubDate>
+      <guid>/extras/uva/</guid>
       <description></description>
     </item>
     

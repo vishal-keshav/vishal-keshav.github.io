@@ -1,22 +1,29 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Vishal Keshav</title>
+    <title>Tags | Vishal Keshav</title>
     <link>/tags/</link>
-    <description>Recent content in Tags on Vishal Keshav</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2019</copyright>
-    <lastBuildDate>Wed, 15 May 2019 00:00:00 +0000</lastBuildDate>
+      <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <description>Tags</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 15 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Tags</title>
+      <link>/tags/</link>
+    </image>
     
-	    <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
-    
+    <item>
+      <title>Software Engineering</title>
+      <link>/tags/software-engineering/</link>
+      <pubDate>Sun, 15 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/software-engineering/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Academic</title>
       <link>/tags/academic/</link>
       <pubDate>Wed, 15 May 2019 00:00:00 +0000</pubDate>
-      
       <guid>/tags/academic/</guid>
       <description></description>
     </item>
@@ -24,8 +31,7 @@
     <item>
       <title>Machine Learning</title>
       <link>/tags/machine-learning/</link>
-      <pubDate>Sun, 27 Jan 2019 00:00:00 +0530</pubDate>
-      
+      <pubDate>Sun, 27 Jan 2019 00:00:00 -0500</pubDate>
       <guid>/tags/machine-learning/</guid>
       <description></description>
     </item>
@@ -33,8 +39,7 @@
     <item>
       <title>CodeOn</title>
       <link>/tags/codeon/</link>
-      <pubDate>Thu, 27 Sep 2018 00:00:00 +0530</pubDate>
-      
+      <pubDate>Thu, 27 Sep 2018 00:00:00 -0400</pubDate>
       <guid>/tags/codeon/</guid>
       <description></description>
     </item>

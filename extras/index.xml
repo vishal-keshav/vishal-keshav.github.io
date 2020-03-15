@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Extra stuff | Vishal Keshav</title>
+    <link>/extras/</link>
+      <atom:link href="/extras/index.xml" rel="self" type="application/rss+xml" />
+    <description>Extra stuff</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 27 Jan 2019 00:00:00 -0500</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Extra stuff</title>
+      <link>/extras/</link>
+    </image>
+    
+    <item>
+      <title>Fast Prototype</title>
+      <link>/extras/fast-prototype/</link>
+      <pubDate>Sun, 27 Jan 2019 00:00:00 -0500</pubDate>
+      <guid>/extras/fast-prototype/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Interpreter</title>
+      <link>/extras/interpreter/</link>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 -0400</pubDate>
+      <guid>/extras/interpreter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Matrix-matrix multiplication</title>
+      <link>/extras/parallel-matrix-multiplication/</link>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 -0400</pubDate>
+      <guid>/extras/parallel-matrix-multiplication/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Py-Game</title>
+      <link>/extras/py-game/</link>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 -0400</pubDate>
+      <guid>/extras/py-game/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tiny-ml-framework</title>
+      <link>/extras/tiny-ml-framework/</link>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 -0400</pubDate>
+      <guid>/extras/tiny-ml-framework/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UVa</title>
+      <link>/extras/uva/</link>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 -0400</pubDate>
+      <guid>/extras/uva/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Xcelerator: Neural Architecture Search</title>
+      <link>/extras/xcelerator/</link>
+      <pubDate>Sun, 19 Aug 2018 00:00:00 +0000</pubDate>
+      <guid>/extras/xcelerator/</guid>
+      <description>&lt;p&gt;Machine learning has become ubiquitous and is now realized in almost every application. This has burdened the machine learning model developers to make necessary modification in the algorithm to select best available architecture such that performance and power needs can be satisfied post-deployment of the application to smart devices such as smartphones and wearables.&lt;/p&gt;
+&lt;p&gt;For most of the part, a developer tunes the model by changing several hyper-parameters. However, any choice of such hyper-parameters comes either by experience and deep insight, or certain guidelines as provided by the architecture developers (based on ablation studies).&lt;/p&gt;
+&lt;p&gt;In this project, we propose to develop a meta-learning algorithm that takes a specified model architecture and tunes it to match the performance requirement on a particular smart-device. More specifically, we propose to build a policy that iteratively removes weights, channels, and layers in a vision-based model to improve upon execution efficiency while maintaining the prediction accuracy. We show that once the policy is constructed on a particular platform, the domain knowledge can be transferred to construct a policy for a different platform.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
