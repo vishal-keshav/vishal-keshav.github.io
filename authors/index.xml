@@ -5,12 +5,20 @@
     <link>/authors/</link>
       <atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 15 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 06 Jun 2020 00:00:00 -0400</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Authors</title>
       <link>/authors/</link>
     </image>
+    
+    <item>
+      <title>Vishal Keshav</title>
+      <link>/authors/vishal-keshav/</link>
+      <pubDate>Sat, 06 Jun 2020 00:00:00 -0400</pubDate>
+      <guid>/authors/vishal-keshav/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title></title>
@@ -21,14 +29,6 @@
 &lt;p&gt;Before I was a graduate student, I worked at Samsung Research Institute Bengaluru as a Machine Learning Engineer. I received my bachelor’s degree in Mathematics and Computing from the Indian Institute of Technology, Guwahati.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;New Post&lt;/strong&gt;: Navigate to my blog post.&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Vishal Keshav</title>
-      <link>/authors/vishal-keshav/</link>
-      <pubDate>Wed, 01 Jan 2020 00:00:00 -0500</pubDate>
-      <guid>/authors/vishal-keshav/</guid>
-      <description></description>
     </item>
     
   </channel>

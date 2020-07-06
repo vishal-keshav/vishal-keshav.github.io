@@ -3,12 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/authors/admin/</loc>
-    <lastmod>2020-03-15T00:00:00+00:00</lastmod>
+    <loc>/publication_types/4/</loc>
+    <lastmod>2020-06-06T00:00:00-04:00</lastmod>
   </url>
   
   <url>
     <loc>/authors/</loc>
+    <lastmod>2020-06-06T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/cost-aware-inference/</loc>
+    <lastmod>2020-06-06T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/</loc>
+    <lastmod>2020-06-06T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication_types/</loc>
+    <lastmod>2020-06-06T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/vishal-keshav/</loc>
+    <lastmod>2020-06-06T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-06-06T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/admin/</loc>
     <lastmod>2020-03-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -33,32 +63,12 @@
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2020-03-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/publication_types/3/</loc>
     <lastmod>2020-01-01T00:00:00-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/publication/</loc>
-    <lastmod>2020-01-01T00:00:00-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication_types/</loc>
-    <lastmod>2020-01-01T00:00:00-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/publication/curriculum-learning/</loc>
-    <lastmod>2020-01-01T00:00:00-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/vishal-keshav/</loc>
     <lastmod>2020-01-01T00:00:00-05:00</lastmod>
   </url>
   
@@ -93,68 +103,13 @@
   </url>
   
   <url>
-    <loc>/extras/</loc>
-    <lastmod>2019-01-27T00:00:00-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/extras/fast-prototype/</loc>
-    <lastmod>2019-01-27T00:00:00-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/machine-learning/</loc>
-    <lastmod>2019-01-27T00:00:00-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/codeon/</loc>
-    <lastmod>2018-09-27T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/extras/interpreter/</loc>
-    <lastmod>2018-09-27T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/extras/parallel-matrix-multiplication/</loc>
-    <lastmod>2018-09-27T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/extras/py-game/</loc>
-    <lastmod>2018-09-27T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/extras/tiny-ml-framework/</loc>
-    <lastmod>2018-09-27T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/extras/uva/</loc>
-    <lastmod>2018-09-27T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/post/review-cv/</loc>
     <lastmod>2018-01-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/publication_types/4/</loc>
-    <lastmod>2018-09-01T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/publication/optimizating-wireless-serving/</loc>
     <lastmod>2018-09-01T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/extras/xcelerator/</loc>
-    <lastmod>2018-08-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -169,6 +124,10 @@
   
   <url>
     <loc>/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>/extras/</loc>
   </url>
   
 </urlset>

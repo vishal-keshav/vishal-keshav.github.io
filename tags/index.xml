@@ -28,21 +28,5 @@
       <description></description>
     </item>
     
-    <item>
-      <title>Machine Learning</title>
-      <link>/tags/machine-learning/</link>
-      <pubDate>Sun, 27 Jan 2019 00:00:00 -0500</pubDate>
-      <guid>/tags/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>CodeOn</title>
-      <link>/tags/codeon/</link>
-      <pubDate>Thu, 27 Sep 2018 00:00:00 -0400</pubDate>
-      <guid>/tags/codeon/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>
