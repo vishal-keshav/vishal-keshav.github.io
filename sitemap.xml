@@ -13,7 +13,17 @@
   </url>
   
   <url>
+    <loc>/projects/cost-aware-inference/</loc>
+    <lastmod>2020-06-06T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/publication/cost-aware-inference/</loc>
+    <lastmod>2020-06-06T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/</loc>
     <lastmod>2020-06-06T00:00:00-04:00</lastmod>
   </url>
   
@@ -28,12 +38,12 @@
   </url>
   
   <url>
-    <loc>/authors/vishal-keshav/</loc>
+    <loc>/</loc>
     <lastmod>2020-06-06T00:00:00-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>/authors/vishal-keshav/</loc>
     <lastmod>2020-06-06T00:00:00-04:00</lastmod>
   </url>
   
@@ -103,6 +113,36 @@
   </url>
   
   <url>
+    <loc>/projects/fast-prototype/</loc>
+    <lastmod>2019-01-27T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/machine-learning/</loc>
+    <lastmod>2019-01-27T00:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/codeon/</loc>
+    <lastmod>2018-09-27T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/matrix-multiply-gpu/</loc>
+    <lastmod>2018-09-27T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/q-learning-py-game/</loc>
+    <lastmod>2018-09-27T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/tinyml/</loc>
+    <lastmod>2018-09-27T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/review-cv/</loc>
     <lastmod>2018-01-13T00:00:00+00:00</lastmod>
   </url>
@@ -110,6 +150,11 @@
   <url>
     <loc>/publication/optimizating-wireless-serving/</loc>
     <lastmod>2018-09-01T00:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/xcelerator/</loc>
+    <lastmod>2018-08-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -124,10 +169,6 @@
   
   <url>
     <loc>/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>/extras/</loc>
   </url>
   
 </urlset>

@@ -14,6 +14,14 @@
     
     <item>
       <title>Cost aware inference with early exits</title>
+      <link>/projects/cost-aware-inference/</link>
+      <pubDate>Sat, 06 Jun 2020 00:00:00 -0400</pubDate>
+      <guid>/projects/cost-aware-inference/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cost aware inference with early exits</title>
       <link>/publication/cost-aware-inference/</link>
       <pubDate>Sat, 06 Jun 2020 00:00:00 -0400</pubDate>
       <guid>/publication/cost-aware-inference/</guid>
@@ -196,6 +204,38 @@ From the above expression, we can see that the $\theta_{MLE}$ is a convex combin
       <link>/publication/illumination-estimation/</link>
       <pubDate>Fri, 01 Mar 2019 00:00:00 -0500</pubDate>
       <guid>/publication/illumination-estimation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fast Prototype</title>
+      <link>/projects/fast-prototype/</link>
+      <pubDate>Sun, 27 Jan 2019 00:00:00 -0500</pubDate>
+      <guid>/projects/fast-prototype/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Matrix-matrix multiplication</title>
+      <link>/projects/matrix-multiply-gpu/</link>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 -0400</pubDate>
+      <guid>/projects/matrix-multiply-gpu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Py-Game</title>
+      <link>/projects/q-learning-py-game/</link>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 -0400</pubDate>
+      <guid>/projects/q-learning-py-game/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tiny-ml</title>
+      <link>/projects/tinyml/</link>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 -0400</pubDate>
+      <guid>/projects/tinyml/</guid>
       <description></description>
     </item>
     
@@ -861,6 +901,15 @@ This can effectively produce invariance to rotation and scaling
     </item>
     
     <item>
+      <title>Xcelerator: Neural Architecture Search</title>
+      <link>/projects/xcelerator/</link>
+      <pubDate>Sun, 19 Aug 2018 00:00:00 +0000</pubDate>
+      <guid>/projects/xcelerator/</guid>
+      <description>&lt;p&gt;This project focues on automatically fine tuning the vision architecture suitable for running on an embedded device.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Patent: Contextual task scheduling</title>
       <link>/publication/patent-contextual-task-scheduling/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 -0400</pubDate>
@@ -873,14 +922,6 @@ This can effectively produce invariance to rotation and scaling
       <link>/publication/patent-task-execution/</link>
       <pubDate>Sat, 01 Oct 2016 00:00:00 -0400</pubDate>
       <guid>/publication/patent-task-execution/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/extras/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/extras/</guid>
       <description></description>
     </item>
     

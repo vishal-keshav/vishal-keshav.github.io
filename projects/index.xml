@@ -1,22 +1,38 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Machine Learning | Vishal Keshav</title>
-    <link>/tags/machine-learning/</link>
-      <atom:link href="/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
-    <description>Machine Learning</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 27 Jan 2019 00:00:00 -0500</lastBuildDate>
+    <title>Projects | Vishal Keshav</title>
+    <link>/projects/</link>
+      <atom:link href="/projects/index.xml" rel="self" type="application/rss+xml" />
+    <description>Projects</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 06 Jun 2020 00:00:00 -0400</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
-      <title>Machine Learning</title>
-      <link>/tags/machine-learning/</link>
+      <title>Projects</title>
+      <link>/projects/</link>
     </image>
+    
+    <item>
+      <title>Cost aware inference with early exits</title>
+      <link>/projects/cost-aware-inference/</link>
+      <pubDate>Sat, 06 Jun 2020 00:00:00 -0400</pubDate>
+      <guid>/projects/cost-aware-inference/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Fast Prototype</title>
       <link>/projects/fast-prototype/</link>
       <pubDate>Sun, 27 Jan 2019 00:00:00 -0500</pubDate>
       <guid>/projects/fast-prototype/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Matrix-matrix multiplication</title>
+      <link>/projects/matrix-multiply-gpu/</link>
+      <pubDate>Thu, 27 Sep 2018 00:00:00 -0400</pubDate>
+      <guid>/projects/matrix-multiply-gpu/</guid>
       <description></description>
     </item>
     
