@@ -1,174 +1,63 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <url>
-    <loc>/publication_types/4/</loc>
-    <lastmod>2020-06-06T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/</loc>
-    <lastmod>2020-06-06T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/cost-aware-inference/</loc>
-    <lastmod>2020-06-06T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/cost-aware-inference/</loc>
-    <lastmod>2020-06-06T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/</loc>
-    <lastmod>2020-06-06T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/</loc>
-    <lastmod>2020-06-06T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication_types/</loc>
-    <lastmod>2020-06-06T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2020-06-06T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/vishal-keshav/</loc>
-    <lastmod>2020-06-06T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/admin/</loc>
-    <lastmod>2020-03-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2020-03-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/python-variables/</loc>
-    <lastmod>2020-03-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/software-engineering/</loc>
-    <lastmod>2020-03-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2020-03-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication_types/3/</loc>
-    <lastmod>2020-01-01T00:00:00-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/curriculum-learning/</loc>
-    <lastmod>2020-01-01T00:00:00-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication_types/8/</loc>
-    <lastmod>2019-09-01T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/patent-dnn-based-imaging/</loc>
-    <lastmod>2019-09-01T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/academic/</loc>
-    <lastmod>2019-05-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/regularization/</loc>
-    <lastmod>2019-05-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication_types/1/</loc>
-    <lastmod>2019-03-01T00:00:00-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/illumination-estimation/</loc>
-    <lastmod>2019-03-01T00:00:00-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/fast-prototype/</loc>
-    <lastmod>2019-01-27T00:00:00-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/machine-learning/</loc>
-    <lastmod>2019-01-27T00:00:00-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/codeon/</loc>
-    <lastmod>2018-09-27T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/matrix-multiply-gpu/</loc>
-    <lastmod>2018-09-27T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/q-learning-py-game/</loc>
-    <lastmod>2018-09-27T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/tinyml/</loc>
-    <lastmod>2018-09-27T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/review-cv/</loc>
-    <lastmod>2018-01-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/optimizating-wireless-serving/</loc>
-    <lastmod>2018-09-01T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/xcelerator/</loc>
-    <lastmod>2018-08-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/patent-contextual-task-scheduling/</loc>
-    <lastmod>2017-10-01T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/patent-task-execution/</loc>
-    <lastmod>2016-10-01T00:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
-  </url>
-  
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>https://vishal-keshav.github.io/</loc>
+<lastmod>2017-06-12T00:00:00-04:00</lastmod>
+</url>
+<url>
+<loc>https://vishal-keshav.github.io/</loc>
+<lastmod>2018-03-22T00:00:00-04:00</lastmod>
+</url>
+<url>
+<loc>https://vishal-keshav.github.io/</loc>
+<lastmod>2018-05-05T00:00:00-04:00</lastmod>
+</url>
+<url>
+<loc>https://vishal-keshav.github.io/</loc>
+<lastmod>2018-05-15T00:00:00-04:00</lastmod>
+</url>
+<url>
+<loc>https://vishal-keshav.github.io/</loc>
+<lastmod>2018-12-05T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>https://vishal-keshav.github.io/</loc>
+<lastmod>2019-05-29T00:00:00-04:00</lastmod>
+</url>
+<url>
+<loc>https://vishal-keshav.github.io/</loc>
+<lastmod>2019-05-30T00:00:00-04:00</lastmod>
+</url>
+<url>
+<loc>https://vishal-keshav.github.io/</loc>
+<lastmod>2019-06-02T00:00:00-04:00</lastmod>
+</url>
+<url>
+<loc>https://vishal-keshav.github.io/pdfs/cost1.pdf</loc>
+<lastmod>2020-04-21T21:39:47-04:00</lastmod>
+</url>
+<url>
+<loc>https://vishal-keshav.github.io/pdfs/cost2.pdf</loc>
+<lastmod>2020-07-05T20:34:12-04:00</lastmod>
+</url>
+<url>
+<loc>https://vishal-keshav.github.io/pdfs/decoupling.pdf</loc>
+<lastmod>2020-03-15T03:09:14-04:00</lastmod>
+</url>
+<url>
+<loc>https://vishal-keshav.github.io/pdfs/map.pdf</loc>
+<lastmod>2021-03-23T17:24:56-04:00</lastmod>
+</url>
+<url>
+<loc>https://vishal-keshav.github.io/pdfs/optimization1.pdf</loc>
+<lastmod>2021-03-23T18:30:04-04:00</lastmod>
+</url>
+<url>
+<loc>https://vishal-keshav.github.io/pdfs/optimization2.pdf</loc>
+<lastmod>2021-03-23T18:30:55-04:00</lastmod>
+</url>
+<url>
+<loc>https://vishal-keshav.github.io/pdfs/structuring.pdf</loc>
+<lastmod>2020-12-04T15:21:58-05:00</lastmod>
+</url>
 </urlset>
