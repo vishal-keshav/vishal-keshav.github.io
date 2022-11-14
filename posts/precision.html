@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- Mathjax Support -->
+<script type="text/javascript" async
+src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/monokai.css" type="text/css" />
+    <title>Precision-Recall CIs - Parametric model and Monte carlo simulation</title>
+
+    <!--
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="canonical" href="https://vishal-keshav.github.io/posts/precision.html">
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500;1,700">
+    -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+  
+    
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-131439197-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+
+    <style>
+      .container {
+        max-width: 1000px;
+        margin: auto;
+      }
+      .bodyfont {
+        font-family: 'Assistant', sans-serif;
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+      .titlefont {
+        font-family: 'Libre Baskerville', serif;
+        font-size: 3rem;
+      }
+      .writtenbyfont {
+        font-family: 'Inconsolata', monospace;
+        font-size: 1.2rem;
+      }
+      @import url(https://fonts.googleapis.com/css?family=Lato);
+
+      ul.navbar {
+        display: inline;
+        flex-direction: column;
+        align-items: start;
+        list-style-type: none;
+        list-style: none;
+      }
+      ul.navbar li {
+        padding: 6px 4;
+        display: inline;
+      }
+      ul.navbar li a {
+        position: relative;
+        display: inline;
+        padding: 4px 4;
+        font-family: Lato, sans-serif;
+        font-size: 1.5rem;
+        color: #000000;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: 0.5s;
+      }
+      ul.navbar li a::after {
+        position: absolute;
+        content: "";
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: #038eeb;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.5s;
+      }
+      ul.navbar li a:hover {
+        color: #011314;
+      }
+      ul.navbar li a:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+
+    </style>
+
+
+  </head>
+
+  
+
+  <body>
+    <div class="container">
+      <!--
+      <nav>
+        <a href="/">Home</a>
+        <a href="/#post">Posts</a>
+      </nav>
+      -->
+
+      <link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet">
+      <br>
+      <br>
+      <br>
+      <div style="display: inline-block; text-align: right; width: 100%">
+      <ul class='navbar'>
+        <li><a href="/">Home</a></li>
+      </ul>
+      <ul class='navbar'>
+        <li><a href="/#post">Posts</a></li>
+      </ul>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="writtenbyfont">
+        Written By Vishal Keshav
+      </div>
+      <br>
+      <br>
+      <div class="titlefont">
+        Precision-Recall CIs - Parametric model and Monte carlo simulation
+      </div>
+      <br>
+      
+      <img src="../images/precision.jpg" alt="Italian Trulli" width="100%">
+      
+      <div class="bodyfont">
+      <h1 id="introduction">Introduction</h1>
+
+<p>The capacity to accurately assess the system’s performance is a crucial first step in developing an ML system. Although the selection of an evaluation measure depends on the context, accuracy, precision, and recall are the preferred metrics for the majority of ML models, such as binary or multi-class classifiers (also the subject of this article). All we need is “large enough” labeled data and apply the formulae. Larger the test data, accurate the performance metrics. However, there are several issues with this. First, we are unsure of the size at which we can confidently assess the metrics; and second, there may be circumstances in which we are unable to have huge amounts of labeled test data (e.g. labeling cost is high). This is where confidence intervals (CI) come in. Consider the following two cases:</p>
+
+<ul>
+  <li>
+    <p>Case 1: Model A has a precision of 0.78 and Model B has a precision of 0.81.</p>
+  </li>
+  <li>
+    <p>Case 2: Model A precision lies in the interval (0.76, 0.80) with 95% probability. Model B precision lies in the interval (0.77, 0.83) with 95% probability.</p>
+  </li>
+</ul>
+
+<p>In case 1, Model B is certainly superior than Model A, but when we look at the spread of precision for model B in case 2, Model B might be worse than Model A.</p>
+
+<p>In this post, I will discuss two approaches to find the confidence intervals, namely the non-parametric bootstrap method, and the parametric modeling method. This will be followed by a derivation of confidence intervals for precision and recall with the parametric modeling approach.</p>
+
+<h1 id="non-parametric-versus-parametric-approach">Non parametric versus parametric approach</h1>
+
+<p>There are mainly two approaches to compute the CIs for a given estimate:</p>
+
+<ol>
+  <li>
+    <p>The first approach is not assuming any underlying process that generates the data. An example is the bootstrapping method where a sample of data is used to produce many re-samplings (with replacement). Estimates are computed using those re-samples.</p>
+  </li>
+  <li>
+    <p>The second approach is modeling the underlying data generating process, a.k.a parametric approach. Here, we find the parameters of an assumed distribution that models the estimate of interest.</p>
+  </li>
+</ol>
+
+<p>When it comes to computing CIs using a non-parametric approach such as bootstrapping, there are two downsides:</p>
+
+<ol>
+  <li>
+    <p>When the sample is small, they perform poorly. This is going to be the case when the labeling process is expensive.</p>
+  </li>
+  <li>
+    <p>Makes no assumption of the underlying distribution even if useful information is available. This makes this approach unreliable in producing good CIs.</p>
+  </li>
+</ol>
+
+<p>Although there are some disadvantages, it does have some advantages, mainly when the metric is arbitrary and there are no suitable modeling approaches. <a href="http://rasbt.github.io/mlxtend/user_guide/evaluate/bootstrap_point632_score/">Here</a> is a nice working article/library that use bootstrap method to compute the CIs for accuracy, precision and recall.</p>
+
+<p>In the following sections, our discussion will primarily follow the parametric approach. We leave out the the CI computation for accuracy metrics because there are great resources that details it, for example <a href="https://machinelearningmastery.com/confidence-intervals-for-machine-learning">here</a>.
+We will see how inversion test (discussed <a href="https://vishal-keshav.github.io/posts/confidence.htm">here</a> is used to derive the CIs of precision.</p>
+
+<h1 id="cis-for-precision--the-parametric-approach">CIs for precision — The parametric approach</h1>
+
+<p>We define precision as:</p>
+
+\[\begin{equation}
+Precision = \frac{True Positive}{(True Positive + False Positive)} 
+\end{equation}\]
+
+<p>Let’s denote the number of items labelled positive by the model as \(x_{precision}\) and total number of items labelled positive by the model as \(n_{precision}\). Also, let’s denote \(p_{precisiion}\) as the model of precision. Then,</p>
+
+\[\begin{equation}
+\hat{p}_{precision} = \frac{x_{precision}}{n_{precision}} 
+\end{equation}\]
+
+<p>\(p_{precision}\)
+The underlying distribution that models the precision naturally follows a Binomial distribution.</p>
+
+\[\begin{equation}
+p_{precision} \sim p^{x_{precision}}*(1-p)^{n_{precision}-x_{precision}}
+\end{equation}\]
+
+<p>where \(p\) is the parameter of the precision model.</p>
+
+<h2 id="binomial-likelihood-ratio-test-and-the-test-inversion">Binomial likelihood ratio test and the test inversion</h2>
+<p>A likelihood test statistics measures the distance between mostly likely parameter (MLE) and the observed parameter given an underlying distribution. To depict it graphically,</p>
+
+<center><img src="../res/dis.png" width="700" height="auto" /></center>
+
+<p>Cosidering that our null hypothesis is \(H_{0}: p = p_{0}\), then the larger the distance \(\triangle\), the higher the chance that the null hypothesis is rejected. In other words we keep all such p not such that we cannot reject the null hypothesis under the test statistics.</p>
+
+<p>The likelihood test statistics is given by:</p>
+
+\[\begin{equation}
+LR(p_{0}) = 2*(l(\hat{p}_{precision}) - l(p_{0})))
+\end{equation}\]
+
+<p>where \(l\) is the likelihood function. For a binomial distribution, the likelihood function is given by:</p>
+
+\[\begin{equation}
+l(p) = x_{precision} * log(p) + (n_{precision}-x_{precision}) * log(1-p)
+\end{equation}\]
+
+<p>An interesting thing about likelihood test is that it asymptotes to Chi-squared distribution with 1 degree of freedom (denoted by \(\chi^{2}_{1}\)). How? Checkout the derivation <a href="https://stats.stackexchange.com/questions/52829/why-is-a-likelihood-ratio-test-distributed-chi-squared">here</a>.</p>
+
+<p>Using the binomial likelihood function, the binomial likelihood ratio test statistics becomes:</p>
+
+\[\begin{equation}
+LR(p_{0}) = 2*(l(\hat{p}_{precision}) - l(p_{0}))) \\
+= 2 (x_{precision} * log(\hat{p}_{precision}) + (n_{precision}-x_{precision}) * log(1-\hat{p}_{precision}) \\ - x_{precision} * log(p_{0}) + (n_{precision}-x_{precision}) * log(1-p_{0})) \\
+= 2 \left( x_{precision} log\left(\frac{\hat{p}_{precision}}{p_{0}} \right) + (n_{precision} - x_{precision}) log\left( \frac{1-\hat{p}_{precision}}{1-p_{0}}\right)\right)
+\end{equation}\]
+
+<p>Since the test statistics is \(\chi^{2}_{1}\), we fail to reject the null hypothesis \(H_{0}\) for all such values of \(p_{0}\) that satisfies</p>
+
+\[\begin{equation}
+p_{0} \in (min_{p_{0}} s.t. LR(p_{0} \leq \chi^{2}_{1}), max_{p_{0}} s.t. LR(p_{0} \leq \chi^{2}_{1}))
+\end{equation}\]
+
+<p>Hence, the test inversion gives us the the confidence interval for precision as shown below:</p>
+
+\[\begin{equation}
+CI_{precision} = (min_{p_{0}} s.t. LR(p_{0} \leq \chi^{2}_{1}, max_{p_{0}} s.t. LR(p_{0} \leq \chi^{2}_{1}))
+\end{equation}\]
+
+<p>whith a certain confidence level \(\alpha\) that sets the the value of \(\chi^{2}_{1}\).</p>
+
+<p>Let’s find the CI for Recall!</p>
+
+<h1 id="cis-for-recall--monte-carlo-simulation">CIs for Recall — Monte Carlo simulation</h1>
+
+<p>Recall is define as:</p>
+
+\[\begin{equation}
+Recall = \frac{True Positive}{(True Positive + False Negative)}
+\end{equation}\]
+
+<p>The numerator and denominator are not independent. Moreover, the denominator require us to know the labeled data for full population. There is not way we can model this with any distribution.</p>
+
+<p>Ouch!</p>
+
+<p>Does that mean there is not way to find CIs for recall? No, we can! The technique here follows two steps:</p>
+
+<ol>
+  <li>Use independent parametric model(s) to model the recall.</li>
+  <li>Use monte carlo simulation to generate recall values and take the alpha percentile in order to create the confidence interval for recall.</li>
+</ol>
+
+<h2 id="modeling-recall">Modeling Recall</h2>
+
+<p>It turns out that the recall can be modelled if we have a modelled the precision and negative predictive value.</p>
+
+\[\begin{equation}
+Negative predictive value = \frac{True Negative}{(True Negative + False Negative)} \\
+=  \frac{x_{npv}}{n_{nvp}}
+\end{equation}\]
+
+<p>where \(x_{nvp}\) is the total number of correctly negatively labelled items, and \(n_{nvp}\) is the total number of negative items that are labelled by the classifier.</p>
+
+<p>Just like we found the model for precision, the model for negative predictive value also follows the binomial distribution. Now the main idea is to use precision and negative predictive value models to model the recall.</p>
+
+<p>Recall can be re-written using the formulae of precision and NVP as follow (where \(N_{p}\) is total positiviely labelled items, and \(N\) is the total labelled items):</p>
+
+\[\begin{equation}
+Recall = \frac{Precision * N_{p}}{Precision * N_{p} + (1-NVP)*(N - N_{p})} \\
+= \frac{\frac{True Positive * (True Positive + False Positive)}{(True Positive + False Positive)}}{\frac{True Positive * (True Positive + False Positive)}{(True Positive + False Positive)} + \frac{False Negative * (True Negative + False Negative)}{(True Negaive + False Negative)}}\\
+= \frac{True Positive}{True Positive + False Negative}
+\end{equation}\]
+
+<p>Since the model for both precision and NVP are independent of each other, we use monte carlo simulation to generate \(N_{iter}\) samples of recall.
+Let’s assume that using the simulation, we have generate following sample and they are ordered in the increasing order \(R_{1}\), \(R_{2}\), \(R_{3}\), …, \(R_{N_{iter}}\), then the confidence interval for the recall is the \(\alpha\) and \(1-\alpha\) percentiles of the generated data.</p>
+
+<h1 id="concluding-thoughts">Concluding thoughts</h1>
+
+<p>We presented the idea of computing confidence intervals for important ML evaluation metrics so that we can get a better picture of model performance. To do that, we looked into the the detail of how the CIs of accuracy, precision and recall is calculated. Code snippet to compute the CIs based on parametric approach will be update soon!</p>
+
+<h2 id="notes">Notes</h2>
+<p>Please report errata and/or leave any comments/suggestion <a href="mailto:dev.vkeshav@gmail.com">here</a>.</p>
+
+<p>Disclaimer: Information presented here does not represent views of my current or past employers. Opinions are my own.</p>
+
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+  </body>
+
+</html>
