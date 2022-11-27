@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- Mathjax Support -->
+<script type="text/javascript" async
+src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/monokai.css" type="text/css" />
+    <title>Multi-objective optimization for scoring and ranking</title>
+
+    <!--
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="canonical" href="https://vishal-keshav.github.io/posts/optimization_multi.html">
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500;1,700">
+    -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+  
+    
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-131439197-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+
+    <style>
+      .container {
+        max-width: 1000px;
+        margin: auto;
+      }
+      .bodyfont {
+        font-family: 'Assistant', sans-serif;
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+      .titlefont {
+        font-family: 'Libre Baskerville', serif;
+        font-size: 3rem;
+      }
+      .writtenbyfont {
+        font-family: 'Inconsolata', monospace;
+        font-size: 1.2rem;
+      }
+      @import url(https://fonts.googleapis.com/css?family=Lato);
+
+      ul.navbar {
+        display: inline;
+        flex-direction: column;
+        align-items: start;
+        list-style-type: none;
+        list-style: none;
+      }
+      ul.navbar li {
+        padding: 6px 4;
+        display: inline;
+      }
+      ul.navbar li a {
+        position: relative;
+        display: inline;
+        padding: 4px 4;
+        font-family: Lato, sans-serif;
+        font-size: 1.5rem;
+        color: #000000;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: 0.5s;
+      }
+      ul.navbar li a::after {
+        position: absolute;
+        content: "";
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: #038eeb;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.5s;
+      }
+      ul.navbar li a:hover {
+        color: #011314;
+      }
+      ul.navbar li a:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+
+    </style>
+
+
+  </head>
+
+  
+
+  <body>
+    <div class="container">
+      <!--
+      <nav>
+        <a href="/">Home</a>
+        <a href="/#post">Posts</a>
+      </nav>
+      -->
+
+      <link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet">
+      <br>
+      <br>
+      <br>
+      <div style="display: inline-block; text-align: right; width: 100%">
+      <ul class='navbar'>
+        <li><a href="/">Home</a></li>
+      </ul>
+      <ul class='navbar'>
+        <li><a href="/#post">Posts</a></li>
+      </ul>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="writtenbyfont">
+        Written By Vishal Keshav
+      </div>
+      <br>
+      <br>
+      <div class="titlefont">
+        Multi-objective optimization for scoring and ranking
+      </div>
+      <br>
+      
+      <img src="../images/optimization21.jpg" alt="Italian Trulli" width="100%">
+      
+      <div class="bodyfont">
+      <h1 id="introduction">Introduction</h1>
+
+<p>Ranking and recommendation systems, at the very least, rely on a scoring function \(f(x)\). The scoring function assigns scores to an item based on it’s feature vector \(x\). The scoring function can be expressed by \(f^{W}(x)\) if it is based on a parametrized neural network model, where \(W\) is the set of learned parameters. Once the items are scored, they are ranked by sorting the items based on the scores. To construct a scoring function, one needs to determine the underlying objective. Some example objectives are:</p>
+
+<ol>
+  <li>Click on the buy button — The objective is to maximize the score if a user is going to click on the buy button on an item on an e-commerce website. This can be modeled as a classification problem.</li>
+  <li>Number of clicks on an advertised item — The objective is to maximize the score if there are many user clicks on a certain ad on a social media website. This can be modeled as a regression problem.</li>
+</ol>
+
+<p>If the right modeling strategy is used, and the right collection of features are taken into account, optimizing for a single objective is a relatively simple task. Once the optimization is done on the target objective, we will have the scoring function that can score items so that they can be re-ranked to meet a certain goal (for example, increasing the advertisement profits, or getting users to buy more items).</p>
+
+<p>Even while single objective optimization works effectively in the majority of use cases, there may be times when it is necessary to combine several objectives at once. For instance, we want to maximize the amount of ad clicks while also increasing the possibility that a product would be purchased. When items are ranked based on multiple objective signals, there will be a trade-off if these objectives are at odds with one another. If they don’t, then that’s the best outcome for a multi-objective scoring system. In this post, I will discuss multi-objective optimization, and leave the discussion on multi-objective scoring (Pareto optimality) for later.</p>
+
+<h1 id="multi-task-learning">Multi-task learning</h1>
+
+<p>Let’s consider that we have \(N\)=3 independent tasks that we need our model to optimize on. Let’s consider the following three tasks:</p>
+
+<ol>
+  <li>Whether the buy button is clicked on an item. This is a binary classification problem.</li>
+  <li>Number of clicks on an advertised item. This is a regression problem.</li>
+  <li>The number of seconds that an item was seen before being purchased. This is a regression problem. (The higher the number, the more engaged users are.)</li>
+</ol>
+
+<p>The most simple way to learn these three tasks is to optimize them individually. By the end, we will have three separate models, each having it’s own parameters. To construct the scoring function, we can take a weighted linear combination of the prediction output from each of these models (This is out of the scope of this discussion as we only deal with optimization, not scoring).</p>
+
+<p>Although the above strategy is straightforward, there are some drawbacks. Multi-task learning is a class of techniques where a single model shares the parameters across multiple tasks and an optimization is done using a weighted linear combination of the individual losses of the tasks. Let’s say the shared model (i.e. a neural network) is parametrized by \(W\), then the final loss function \(\mathcal{L}(W)\) is given by</p>
+
+\[\begin{equation}
+\mathcal{L}(W) = w_{1} * \mathcal{L_1}(W) + w_{2} * \mathcal{L_2}(W) + w_{3} * \mathcal{L_3}(W) \\
+\mathcal{L_1}(W) = - \log Softmax(y_1, f^{W}(x)) \\
+\mathcal{L_2}(W) = \parallel y_2 - f^{W}(x) \parallel^{2} \\
+\mathcal{L_3}(W) = \parallel y_3 - f^{W}(x) \parallel^{2} \\
+\end{equation}\]
+
+<p>where \(\mathcal{L_1}(W)\) is the logistic loss and \(y_1\) is the expected class output of binary classification task, \(\mathcal{L_2}(W)\) and \(\mathcal{L_3}(W)\) are the squared error loss with \(y_2\) and \(y_3\) as the expected regression output of first regression task (number of clicks) and the second regression task (view seconds) respectively.</p>
+
+<h2 id="advantages-of-multi-task-learning">Advantages of multi-task learning</h2>
+
+<p>The following are some justifications for why multitask optimization is preferable to individual task optimization:</p>
+
+<ol>
+  <li>Inductive bias — Strong bias is induced by sharing model parameters across several tasks, which is known as inductive bias. The bias identifies that every single task is working toward the same meta-objective. This bias leads to a faster and a better optimization.</li>
+  <li>Efficiency — Since the majority of parameters are shared, learning is more effective, and inference times are reduced. Management complexity is also decreased by using just one model.</li>
+</ol>
+
+<p>In the following part, we go over the dis-advantages of manual tuning (\(w_1\), \(w_2\), \(w_3\)) and how to avoid it for the per-task loss.</p>
+
+<h1 id="task-uncertainty-in-the-optimization-objective">Task uncertainty in the optimization objective</h1>
+
+<p>There are two downsides of manually choosing the weights \(w_1\), \(w_2\) and \(w_3\).</p>
+
+<ol>
+  <li>Weights can be particularly sensitive to tasks with significant variance when the scale of the objectives is very diverse (which it typically is). A poor optimization can be caused by sensitivity.</li>
+  <li>Choosing an optimal set of weights is a time-consuming process. As the number of tasks grows, the choice of a good set of weights is intractable.</li>
+  <li>Optimizing a task with high variance outputs can lead to overall poor optimization results.</li>
+</ol>
+
+<p>Both the task output variance and the weight sensitivity depending on the task’s output scale (and therefore loss) indicate that we can express the task’s output uncertainty in the optimization objective such that</p>
+
+<ul>
+  <li>We weigh the loss less as the task’s output uncertainty rises.</li>
+  <li>We weight the loss more heavily when the task’s output uncertainty reduces.</li>
+  <li>Minimize all of the task’s uncertainty during the optimization process.</li>
+</ul>
+
+<p>We consider two instances, as detailed in the sub-sections, to reflect the uncertainty in the task’s output.</p>
+
+<h2 id="uncertainty-model-for-classification-tasks">Uncertainty model for classification tasks</h2>
+<p>To model the uncertainty in the classification tasks, we can define the likelihood of the task’s output with Gibbs distribution \(Gibbs(f^{W}(x), \sigma)\).</p>
+
+\[\begin{equation}
+p(y=c | f^{W}(x), \sigma) = \frac{exp(\frac{1}{\sigma^2}f^{W}_c(x))}{\sum_{c'}^{C}exp(\frac{1}{\sigma^2}f^{W}_{c'}(x))}
+\end{equation}\]
+
+<p>where \(c\) is the output class, \(C\) is the total number of classes, and \(\sigma^2\) is the temperature parameter which measures uncertainity in terms of entropy.</p>
+
+<p>The log likelihood is written as:</p>
+
+\[\begin{equation}
+\log p(y=c | f^{W}(x), \sigma) = \frac{1}{\sigma^2}f^{W}_{c}(x) - \log \sum_{c'}^{C} exp(\frac{1}{\sigma^2}f^{W}_{c'}(x))
+\end{equation}\]
+
+<h2 id="uncertainty-model-for-regression-tasks">Uncertainty model for regression tasks</h2>
+
+<p>To model the uncertainty in the regression task, we can define the likelihood of task’s output with Normal distribution \(\mathcal{N}(f^{W}(x), \sigma^2)\)</p>
+
+\[\begin{equation}
+p(y | f^{W}(x), \sigma) = \frac{1}{\sigma\sqrt{2\pi}}exp\left(-\frac{(y-f^{W}(x))^2}{2\sigma^2}\right)
+\end{equation}\]
+
+<p>where \(y\) is the regression output and \(\sigma\) is the standard deviation of the normal distribution.</p>
+
+<p>The log likelihood can be written as:</p>
+
+\[\begin{equation}
+\log p(y | f^{W}(x), \sigma) = -\frac{1}{2\sigma^2}\parallel y - f^{W}(x) \parallel^2 - \log \sigma
+\end{equation}\]
+
+<h2 id="uncertainty-as-a-weighting-mechanism--derivation-of-the-optimization-objective">Uncertainty as a weighting mechanism — derivation of the optimization objective</h2>
+
+<p>Let’s assume that we are optimizing for the three previously mentioned tasks (one classification and two regression tasks). Under the independence assumption, the likelihood of the combined model output \(p(y_{1}=c, y_{2}, y_{3} \vert f^{W}(x), \sigma_{1}, \sigma_{2}, \sigma_{3})\) can be factorized further.</p>
+
+\[\begin{equation}
+p(y_1=c, y_2, y_3 | f^{W}(x), \sigma_{1}, \sigma_{2}, \sigma_{3}) = p(y_1=c | f^{W}(x), \sigma_{1}) * p(y_2 | f^{W}(x), \sigma_{2}) * p(y_3 | f^{W}(x), \sigma_{3}) 
+\end{equation}\]
+
+<p>where \(y_1\) is the expected output of classification task, \(y_2\) is the expected output of first regression task and \(y_3\) is the expected output of second regression task. \(\sigma_{1}\), \(\sigma_{2}\), and \(\sigma_{3}\) are the uncertainity parameters associated with each of the three tasks respectively.</p>
+
+<p>The final optimization objective (the loss function) minimizes the negative log likelihood, as given by:</p>
+
+\[\begin{equation}
+\mathcal{L}(W, \sigma_1, \sigma_2, \sigma_3) = -\log p(y_1=c | f^{W}(x), \sigma_{1}) * p(y_2 | f^{W}(x), \sigma_{2}) * p(y_3 | f^{W}(x), \sigma_{3}) \\
+ = -\log p(y_1=c | f^{W}(x), \sigma_{1}) - \log p(y_2 | f^{W}(x), \sigma_{2}) - \log p(y_3 | f^{W}(x), \sigma_{3}) \\
+
+\end{equation}\]
+
+<p>The negative log-likelihood of classification task:</p>
+
+\[\begin{equation}
+-\log p(y_1=c | f^{W}(x), \sigma_{1}) = -\frac{1}{\sigma_{1}^2}f^{W}_{c}(x) + \log \sum_{c'}^{C} exp \left(\frac{1}{\sigma_{1}^2} f^{W}_{c'}(x) \right) \\
+-\frac{1}{\sigma_{1}^2}f^{W}_{c}(x) + \frac{1}{\sigma_{1}^2} \log \sum_{c'}^{C}exp \left( f^{W}_{c'} \right) - \frac{1}{\sigma_{1}^2} \log \sum_{c'}^{C}exp \left( f^{W}_{c'} \right) + \log \sum_{c'}^{C} exp \left(\frac{1}{\sigma_{1}^2} f^{W}_{c'}(x) \right) \\
+-\log p(y_1=c | f^{W}(x), \sigma_{1}) = -\frac{1}{\sigma_{1}^2}\left( f^{W}_{c}(x) - \log \sum_{c'}^{C} exp(f^{W}_{c'}(x)) \right) + \log \frac{\sum_{c'}^{C} exp\left ( \frac{1}{\sigma_{1}^2} f^{W}_{c'}(x) \right)}{\left( \sum_{c'}^{C} exp(f^{W}_{c'}(x)) \right)^{\frac{1}{\sigma_{1}^2}}} \\
+\end{equation}\]
+
+<p>After making an approximation substitution for \(\left( \sum_{c'}^{C} exp(f^{W}_{c'}(x)) \right)^{\frac{1}{\sigma_{1}^2}}\) by \(\frac{1}{\sigma_{1}^2} \sum_{c'}^{C} exp \left( \frac{1}{\sigma_{1}^2} f^{W}_{c'}(x) \right)\), we get</p>
+
+\[\begin{equation}
+-\log p(y_1=c | f^{W}(x), \sigma_{1}) = \frac{1}{\sigma_{1}^2} \mathcal{L}_{1}(W) + \log{\sigma_{1}}
+\end{equation}\]
+
+<p>The negative log-likelihood of regressions task is given by:</p>
+
+\[\begin{equation}
+-\log p(y_2 | f^{W}(x), \sigma_{2}) = \frac{1}{2\sigma_{2}^2}\parallel y - f^{W}(x) \parallel^2 + \log{\sigma_{2}} \\
+-\log p(y_2 | f^{W}(x), \sigma_{2}) = \frac{1}{2\sigma_{2}^2} \mathcal{L_{2}}(W) + \log{\sigma_{2}}
+\end{equation}\]
+
+<p>Putting it all together, the final multi-optimization loss objective for all three tasks is given by:</p>
+
+\[\begin{equation}
+\mathcal{L}(W, \sigma_1, \sigma_2, \sigma_3) = \frac{1}{\sigma_{1}^2} \mathcal{L}_{1}(W) + \frac{1}{2\sigma_{2}^2} \mathcal{L_{2}}(W) + \frac{1}{2\sigma_{3}^2} \mathcal{L_{3}}(W) + \log{\sigma_{1}} + \log{\sigma_{2}} + \log{\sigma_{3}}
+\end{equation}\]
+
+<p>We notice that in the objective, we are also minimizing the task’s output uncertainty as well as assigning less weights on the losses that are having high uncertainty.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>We showed that optimizing for a multi-objective function can be challenging, especially when the scales of the individual objectives of tasks can vary. Furthermore, it takes a lot of trial and error to allocate how much of each task should be weighted. In this article, we discussed a procedure for tuning the loss weights as an extension of the optimization goal. The task’s output uncertainty is reduced by the learned uncertainty parameters, which enhances the performance of multi-objective models.</p>
+
+<h2 id="notes">Notes</h2>
+<p>Please report errata and/or leave any comments/suggestion <a href="mailto:dev.vkeshav@gmail.com">here</a>.</p>
+
+<p>Disclaimer: Information presented here does not represent views of my current or past employers. Opinions are my own.</p>
+
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+  </body>
+
+</html>
