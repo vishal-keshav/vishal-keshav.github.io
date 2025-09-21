@@ -1,0 +1,31 @@
+[33mConfiguration file: none[0m
+            Source: /Users/vkeshav/codebase/vishal-keshav.github.io
+       Destination: /Users/vkeshav/codebase/vishal-keshav.github.io/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating... 
+                    done in 0.031 seconds.
+ Auto-regeneration: enabled for '/Users/vkeshav/codebase/vishal-keshav.github.io'
+LiveReload address: http://127.0.0.1:35729
+    Server address: http://127.0.0.1:4000
+  Server running... press ctrl-c to stop.
+        LiveReload: Browser connected
+[31m                    ------------------------------------------------[0m
+[31m      Jekyll 4.3.3   Please append `--trace` to the `serve` command [0m
+[31m                     for any additional information or backtrace. [0m
+[31m                    ------------------------------------------------[0m
+/Users/vkeshav/.gem/ruby/3.1.3/gems/jekyll-4.3.3/lib/jekyll/commands/serve.rb:286:in `join': SIGTERM (SignalException)
+	from /Users/vkeshav/.gem/ruby/3.1.3/gems/jekyll-4.3.3/lib/jekyll/commands/serve.rb:286:in `boot_or_detach'
+	from /Users/vkeshav/.gem/ruby/3.1.3/gems/jekyll-4.3.3/lib/jekyll/commands/serve.rb:223:in `start_up_webrick'
+	from /Users/vkeshav/.gem/ruby/3.1.3/gems/jekyll-4.3.3/lib/jekyll/commands/serve.rb:102:in `process'
+	from /Users/vkeshav/.gem/ruby/3.1.3/gems/jekyll-4.3.3/lib/jekyll/command.rb:91:in `block in process_with_graceful_fail'
+	from /Users/vkeshav/.gem/ruby/3.1.3/gems/jekyll-4.3.3/lib/jekyll/command.rb:91:in `each'
+	from /Users/vkeshav/.gem/ruby/3.1.3/gems/jekyll-4.3.3/lib/jekyll/command.rb:91:in `process_with_graceful_fail'
+	from /Users/vkeshav/.gem/ruby/3.1.3/gems/jekyll-4.3.3/lib/jekyll/commands/serve.rb:86:in `block (2 levels) in init_with_program'
+	from /Users/vkeshav/.gem/ruby/3.1.3/gems/mercenary-0.4.0/lib/mercenary/command.rb:221:in `block in execute'
+	from /Users/vkeshav/.gem/ruby/3.1.3/gems/mercenary-0.4.0/lib/mercenary/command.rb:221:in `each'
+	from /Users/vkeshav/.gem/ruby/3.1.3/gems/mercenary-0.4.0/lib/mercenary/command.rb:221:in `execute'
+	from /Users/vkeshav/.gem/ruby/3.1.3/gems/mercenary-0.4.0/lib/mercenary/program.rb:44:in `go'
+	from /Users/vkeshav/.gem/ruby/3.1.3/gems/mercenary-0.4.0/lib/mercenary.rb:21:in `program'
+	from /Users/vkeshav/.gem/ruby/3.1.3/gems/jekyll-4.3.3/exe/jekyll:15:in `<top (required)>'
+	from /Users/vkeshav/.gem/ruby/3.1.3/bin/jekyll:25:in `load'
+	from /Users/vkeshav/.gem/ruby/3.1.3/bin/jekyll:25:in `<main>'

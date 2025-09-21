@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- Mathjax Support -->
+<script type="text/javascript" async
+src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/monokai.css" type="text/css" />
+    <title>Machine Learning for Detecting and Restoring Environmental Damage</title>
+
+    <!--
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="canonical" href="http://localhost:4000/posts/ml-environmentalism.html">
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500;1,700">
+    -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+  
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WB160GXTZ0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WB160GXTZ0');
+</script>
+
+
+    <style>
+      .container {
+        max-width: 1000px;
+        margin: auto;
+      }
+      .bodyfont {
+        font-family: 'Assistant', sans-serif;
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+      .titlefont {
+        font-family: 'Libre Baskerville', serif;
+        font-size: 3rem;
+      }
+      .writtenbyfont {
+        font-family: 'Inconsolata', monospace;
+        font-size: 1.2rem;
+      }
+      @import url(https://fonts.googleapis.com/css?family=Lato);
+
+      ul.navbar {
+        display: inline;
+        flex-direction: column;
+        align-items: start;
+        list-style-type: none;
+        list-style: none;
+      }
+      ul.navbar li {
+        padding: 6px 4;
+        display: inline;
+      }
+      ul.navbar li a {
+        position: relative;
+        display: inline;
+        padding: 4px 4;
+        font-family: Lato, sans-serif;
+        font-size: 1.5rem;
+        color: #000000;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: 0.5s;
+      }
+      ul.navbar li a::after {
+        position: absolute;
+        content: "";
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: #038eeb;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.5s;
+      }
+      ul.navbar li a:hover {
+        color: #011314;
+      }
+      ul.navbar li a:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+
+    </style>
+
+
+  </head>
+
+  
+
+  <body>
+    <div class="container">
+      <!--
+      <nav>
+        <a href="/">Home</a>
+        <a href="/#post">Posts</a>
+      </nav>
+      -->
+
+      <link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet">
+      <br>
+      <br>
+      <br>
+      <div style="display: inline-block; text-align: right; width: 100%">
+      <ul class='navbar'>
+        <li><a href="/">Home</a></li>
+      </ul>
+      <ul class='navbar'>
+        <li><a href="/#post">Posts</a></li>
+      </ul>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="writtenbyfont">
+        Written By Vishal Keshav
+      </div>
+      <br>
+      <br>
+      <div class="titlefont">
+        Machine Learning for Detecting and Restoring Environmental Damage
+      </div>
+      <br>
+      
+      <img src="../images/heat_map.jpg" alt="Italian Trulli" width="100%">
+      
+      <div class="bodyfont">
+      <h1 id="introduction">Introduction</h1>
+
+<p>We are drowning in planetary data like daily satellite snaps of the Earth, sensor samples of air and water every minute, wildlife info through cameras every second, and climate records that stretch back decades. Hidden in that flood are the weak signals that tell us where forests are thinning, where rivers are stressed, where species are slipping, and where emissions are quietly rising.</p>
+
+<p>In this short post I highlight advancements in machine learning that improve our understanding and approach toward environmental activities, detecting environmental degradation, as well as guiding prevention, mitigation, and restoration.</p>
+
+<h2 id="deforestation-and-land-degradation--eyes-in-the-sky">Deforestation and Land Degradation – Eyes in the Sky</h2>
+
+<p>Feed satellite imagery such as <a href="https://landsat.gsfc.nasa.gov/">Landsat</a>, <a href="https://www.sentinel-hub.com/">Sentinel</a>, <a href="https://apollomapping.com/satellite-imagery">PlanetScope</a> into computer vision models to map what is on the ground and how it changes week to week.</p>
+
+<p>Texture and canopy geometry are learnable. Computer vision models like CNNs, when trained on imagery, can tell natural forest from regimented rows of plantations and temporal models can flag new clearings under intermittent cloud cover.</p>
+
+<p><strong>Core techniques</strong></p>
+
+<ul>
+  <li><strong>U-Nets</strong> segment imagery into classes (intact forest, plantation, cropland, bare soil).</li>
+  <li><strong>Temporal models</strong> (1D CNN/LSTM/Transformers) learn change over time across image stacks.</li>
+  <li><strong>Weak supervision</strong> for places with few labels and active learning to prioritize expert review.</li>
+  <li><strong>Metrics integrated into training and evaluation:</strong> IoU/mIoU for segmentation quality, user’s accuracy (precision/recall per class), and time-to-detection for new clearings.</li>
+</ul>
+
+<p>Near-real-time alerts move enforcement from “after the fact” to “on the way”. On the restoration side, models rank sites by likelihood of success (soil, slope, climate, proximity to seed sources), so tree planting budgets go where survival odds are highest.</p>
+
+<h2 id="air-pollution-and-emissions--from-patchy-sensors-to-full-maps">Air Pollution and Emissions – From Patchy Sensors to Full Maps</h2>
+
+<p>Blend ground stations, low-cost sensors, meteorology, and satellites to estimate and forecast pollution at street to city scale. Physics provides direction (wind, boundary layer effects), while ML learns the residuals (local quirks and nonlinearities) so maps fill in the blanks where monitors do not exist. Public resources such as <a href="https://www.epa.gov/aqs">EPA’s Air Quality System</a> and <a href="https://openaq.org/">OpenAQ</a> supply valuable ground-truth data that complement remote sensing inputs.</p>
+
+<p><strong>Core techniques</strong></p>
+
+<ul>
+  <li><strong>Spatiotemporal fusion</strong> (gradient boosting or graph neural nets) merges sparse monitors with satellite NO2/PM columns.</li>
+  <li><strong>Sequence models</strong> (LSTM/Temporal Fusion Transformer) forecast PM2.5/ozone 6-72 hours out. Metrics: RMSE/MAE, R^2 on held-out time periods.</li>
+  <li><strong>Vision models</strong> detect plumes and facility activity to infer plant-level emissions.</li>
+</ul>
+
+<p>Cities get earlier health advisories. Regulators see which facilities actually drive spikes, methane super-emitters are flagged for repair. It is accountability with pixels and timestamps.</p>
+
+<h2 id="water-quality--reading-lakes-and-rivers">Water Quality – Reading Lakes and Rivers</h2>
+
+<p>Multispectral satellite imagery from <a href="https://oceancolor.gsfc.nasa.gov/">NASA OceanColor</a> and Landsat/Sentinel provides surface reflectance used to estimate chlorophyll-a and turbidity, while in-situ measurements from <a href="https://waterdata.usgs.gov/nwis">USGS Water Data</a> track dissolved oxygen, pH, and contaminants in rivers and lakes. Together, these datasets give an informative view of water health across scales. Machine learning links these sources to highlight patterns such as harmful algal blooms, turbidity spikes, or treatment plant anomalies, making early detection possible.</p>
+
+<p><strong>Core techniques</strong></p>
+
+<ul>
+  <li><strong>Multispectral regression with CNNs</strong> to map chlorophyll/turbidity from Sentinel-2/Landsat. Metrics: RMSE/MAPE for concentration estimates compared to lab samples.</li>
+  <li><strong>Autoencoders and isolation forests</strong> on treatment-plant sensors to catch anomalies. Metrics: precision/recall for anomaly alarms, time-to-detection.</li>
+  <li><strong>Physics-informed nets</strong> to respect mass-balance and known optical properties, improving generalization across basins. Metrics: calibration scores and cross-basin transfer performance.</li>
+</ul>
+
+<p>Utilities act hours earlier, watershed managers trace problems to upstream land use, and early algal bloom detection prevents fish kills and toxins in taps.</p>
+
+<h2 id="climate--from-coarse-models-to-local-decisions">Climate – From Coarse Models to Local Decisions</h2>
+
+<p>Climate data spans decades and comes from global reanalysis products, long-term station records, and gridded datasets. Resources such as <a href="https://cds.climate.copernicus.eu/">Copernicus Climate Data Store</a> and <a href="https://daymet.ornl.gov/">Daymet</a> provide open access to climate variables including temperature, precipitation, radiation, and humidity at varying spatial and temporal resolutions. These physical datasets form the backbone for machine learning models that highlight patterns, improve resolution, and detect anomalies in climate behavior.</p>
+
+<p><strong>Core techniques</strong></p>
+
+<ul>
+  <li><strong>Bias-corrected statistical downscaling</strong> with gradient boosting/transformers to turn 50-100 km climate grids into neighborhood-scale projections. Metrics: skill scores (CRPS, correlation) on withheld years.</li>
+  <li><strong>Extreme event detection</strong> via anomaly models on reanalysis and remote sensing. Metrics: ability to capture tail events, measured by precision/recall on extreme events.</li>
+  <li><strong>Causal ML</strong> to separate signal from confounders when evaluating interventions.</li>
+</ul>
+
+<p>Cities can identify heat-resilient neighborhoods for tree cover, utilities plan for compound drought-and-demand risks, and conservationists highlight climate safe zones worth protecting.</p>
+
+<h2 id="from-detection-to-cure">From Detection to Cure</h2>
+
+<p><strong>Prioritizing restoration.</strong> Rank degraded sites by “restoration ROI”: probability of survival + expected carbon + biodiversity uplift - cost/constraints. This is a classic <strong>multi-objective optimization</strong> problem.</p>
+
+<p><strong>Targeting enforcement.</strong> Fuse alerts (forest loss + road proximity + past incidents) and schedule ranger routes with <strong>reinforcement learning</strong>. Reward = prevented loss, penalize travel cost.</p>
+
+<p><strong>Optimizing pollution controls.</strong> In plants and buildings, <strong>model predictive control with learned surrogates</strong> trims energy/emissions while meeting constraints (for example, comfort and effluent quality).</p>
+
+<h1 id="a-minimal-repeatable-technical-stack">A Minimal, Repeatable Technical Stack</h1>
+
+<p>Environmental ML solutions involve a repeatable pipeline, from raw inputs to models and decisions that keeps projects organized and scalable. Below is a flow diagram that captures the typical journey from raw datasets to actionable outputs.</p>
+
+<center><img src="../res/ml_environmentalism.png" width="700" height="auto" /></center>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>Environmentalism needs more than passion. It needs precision. Machine learning gives us precision at planetary scale: seeing small changes early, steering scarce resources wisely, and proving what works with data.</p>
+
+<p>Building tools that help a ranger leave the station sooner, a plant operator tweak a setting earlier, a policymaker cut the right ton of emissions, a community breathe cleaner air next month (not in the next decade). That is the bar. And it is absolutely within reach.</p>
+
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+  </body>
+
+</html>
